@@ -29,4 +29,15 @@
       <image>https://raw.githubusercontent.com/bleakgrey/transporter/master/data/screenshot.png</image>
     </screenshot>
   </screenshots>
+
+  <releases>
+    <release version="1.0.0" date="2018-03-01">
+  ​      <description>
+  ​         <ul>
+              <li>Initial release</li>
+          </ul>
+  ​      </description>
+  ​    </release>
+  ​ </releases>
+
 </component>
