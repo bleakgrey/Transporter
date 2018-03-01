@@ -11,6 +11,7 @@ add_project_arguments([
 executable(
     meson.project_name(),
     'src/Transporter.vala',
+    'src/TransporterWindow.vala',
     'src/WormholeInterface.vala',
     'src/View/InstallView.vala',
     'src/View/ReceiveView.vala',

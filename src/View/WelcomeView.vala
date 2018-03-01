@@ -1,6 +1,6 @@
 public class WelcomeView : Gtk.Grid {
 
-    MyApp app;
+    TransporterWindow window;
 
     construct {
         var welcome = new Granite.Widgets.Welcome (_("Welcome to Transporter"), _("What would you like to do?"));
@@ -10,32 +10,38 @@ public class WelcomeView : Gtk.Grid {
         welcome.activated.connect ((index) => {
             switch (index) {
                 case 0:
-                    var chooser = app.getFileChooser();
+                    var chooser = window.getFileChooser ();
                     if (chooser.run () == Gtk.ResponseType.ACCEPT) {
-                        var file = chooser.get_filename();
-                        var display = app.window.get_display ();
+                        var file = chooser.get_filename ();
+                        var display = window.get_display ();
                         var clipboard = Gtk.Clipboard.get_for_display (display, Gdk.SELECTION_CLIPBOARD);
 
-                        app.addScreen(new SendView(app.wormhole, clipboard));
-                        app.wormhole.send(file);
+                        window.addScreen (new SendView (window.wormhole, clipboard));
+                        window.wormhole.send (file);
                     }
                     chooser.close ();
                     break;
                 case 1:
-                    app.addScreen(new ReceiveView(app.wormhole));
+                    window.addScreen (new ReceiveView (window.wormhole));
                     break;
                 case 2:
-                    AppInfo.launch_default_for_uri ("file://" + app.wormhole.downloads_path, null);
+                    try{
+                        AppInfo.launch_default_for_uri ("file://" + window.wormhole.downloads_path, null);
+                    }
+                    catch(GLib.Error e){
+                        warning(e.message);
+                    }
                     break;
             }
         });
 
+        welcome.margin = 16;
         add (welcome);
         show_all ();
     }
 
-    public WelcomeView(MyApp application){
-        this.app = application;
+    public WelcomeView(TransporterWindow window){
+        this.window = window;
     }
 
 }

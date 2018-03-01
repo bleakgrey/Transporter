@@ -1,0 +1,134 @@
+using Gtk;
+
+public class TransporterWindow: Gtk.Dialog {
+
+	HeaderBar headerbar;
+	Button back_button;
+	Spinner spinner;
+
+	Widget currScreen;
+	Widget[] screens;
+
+	public WormholeInterface wormhole;
+
+	public TransporterWindow (Gtk.Application application) {
+	     Object (application: application,
+	     icon_name: "com.github.bleakgrey.transporter",
+	        title: "Transporter",
+	        resizable: false,
+	        width_request: 470,
+	        height_request: 470
+	    );
+	    this.wormhole = new WormholeInterface();
+		this.window_position = WindowPosition.CENTER;
+		this.set_titlebar (headerbar);
+
+		wormhole.started.connect(() => spinner.show ());
+		wormhole.closed.connect(() => spinner.hide ());
+
+		wormhole.errored.connect((err) => {
+			spinner.hide();
+            Gtk.MessageDialog msg = new Gtk.MessageDialog (this, Gtk.DialogFlags.MODAL, Gtk.MessageType.WARNING, Gtk.ButtonsType.CANCEL, err);
+			msg.response.connect ((response_id) => {
+				switch (response_id) {
+					default:
+					case Gtk.ResponseType.CANCEL:
+						break;
+				}
+				msg.destroy();
+			});
+			msg.show ();
+        });
+
+		if(wormhole.bin_present ())
+			addScreen(new WelcomeView (this));
+		else
+			addScreen(new InstallView (this, wormhole));
+	} 
+
+	construct{
+		get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+		get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
+
+		spinner = new Gtk.Spinner ();
+		spinner.active = true;
+
+		back_button = new Button.with_label (_("Back"));
+        back_button.get_style_context ().add_class (Granite.STYLE_CLASS_BACK_BUTTON);
+        back_button.clicked.connect (() => prevScreen ());
+
+		headerbar = new HeaderBar ();
+		headerbar.set_show_close_button (true);
+		headerbar.title = "Transporter";
+		headerbar.pack_end (spinner);
+		headerbar.pack_start (back_button);
+		headerbar.show ();
+	}
+
+	private void updateWindow(){
+		back_button.visible = !(currScreen is WelcomeView) && screens.length > 1;
+	}
+
+	public void addScreen(Widget screen){
+		var box = get_content_area () as Gtk.Box;
+
+		if(screens.length > 0)
+			box.remove (currScreen);
+
+		screens += screen;
+		currScreen = screen;
+		box.add (currScreen);
+		currScreen.show ();
+		updateWindow ();
+	}
+
+	public void prevScreen(){
+		if(screens.length <= 1)
+			return;
+
+		if(wormhole.is_running()){
+			Gtk.MessageDialog msg = new Gtk.MessageDialog (this, Gtk.DialogFlags.MODAL, Gtk.MessageType.WARNING, Gtk.ButtonsType.YES_NO,
+				_("Are you sure you want to cancel transaction?"));
+			msg.response.connect ((response_id) => {
+				switch (response_id) {
+					case Gtk.ResponseType.YES:
+						wormhole.close ();
+						popScreen ();
+						break;
+					default:
+						break;
+				}
+				msg.destroy();
+			});
+			msg.show ();
+		}
+		else{
+			popScreen();
+		}
+
+	}
+
+	private void popScreen(){
+		var box = get_content_area () as Gtk.Box;
+
+		box.remove (currScreen);
+		screens.resize (screens.length - 1);
+		currScreen = screens[screens.length - 1];
+		box.add (currScreen);
+		currScreen.show ();
+		updateWindow ();
+	}
+
+	public Gtk.FileChooserDialog getFileChooser(){
+		return new Gtk.FileChooserDialog (
+			_("Select files or a folder to send"),
+			this,
+			Gtk.FileChooserAction.OPEN,
+			_("_Cancel"),
+			Gtk.ResponseType.CANCEL,
+			_("_Open"),
+			Gtk.ResponseType.ACCEPT
+		);
+	}
+
+}

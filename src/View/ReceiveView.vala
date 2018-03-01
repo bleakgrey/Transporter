@@ -40,9 +40,9 @@ public class ReceiveView : Gtk.EventBox {
         content.add (subtitle_label);
         content.add (items);
 
-        entry = new Gtk.Entry();
+        entry = new Gtk.Entry ();
         entry.width_chars = 30;
-        items.add(entry);
+        items.add (entry);
 
         add (content);
         show_all ();
