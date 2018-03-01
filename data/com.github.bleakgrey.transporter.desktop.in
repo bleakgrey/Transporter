@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Transporter
+Comment=Share files between computers
+GenericName=File Sharing
+Exec=com.github.bleakgrey.transporter %U
+Icon=com.github.bleakgrey.transporter
+Terminal=false
+Categories=GNOME;GTK;Utility;
+Keywords=share;files;send;receive;wormhole
+MimeType=text/plain;
+StartupNotify=true

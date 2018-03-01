@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>com.github.bleakgrey.transporter</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_group>elementary</project_group>
+  <project_license>GPL-3.0+</project_license>
+  <name>Transporter</name>
+  <summary>Hassle-free file sharing</summary>
+  <description>
+    <p>
+      Send your files to another computer, safely.
+    </p>
+    <p>
+      The two devices are identified by using identical "wormhole codes": in general, the sending machine generates and displays the code, which must then be typed into the receiving machine. The "wormhole codes" are easily memorized and pronounced, perfectly suitable for realization in speech.
+    </p>
+    <p>
+      This application is based on and fully compatible with magic-wormhole.
+    </p>
+  </description>
+  <provides>
+    <binary>com.github.bleakgrey.transporter</binary>
+  </provides>
+  <developer_name>bleak_grey</developer_name>
+  <url type="homepage">https://github.com/bleakgrey</url>
+  <url type="bugtracker">https://github.com/bleakgrey/transporter/issues</url>
+  <url type="donation">https://elementary.io/get-involved#funding</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/elementary/code/master/data/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+</component>
