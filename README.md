@@ -20,11 +20,10 @@ And you'll need these to actually run [magic-wormhole](https://github.com/warner
 * libssl-dev
 
 
-Run these commands to configure the build environment and run some tests:
+Run these commands to configure the build environment:
 
     meson build --prefix=/usr
     cd build
-    ninja test
 
 Finally, install and execute with:
 
