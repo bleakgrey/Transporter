@@ -7,6 +7,6 @@ Exec=com.github.bleakgrey.transporter
 Icon=com.github.bleakgrey.transporter
 Terminal=false
 Categories=GNOME;GTK;Utility;
-Keywords=share;files;send;receive;wormhole
+Keywords=share;files;send;receive;wormhole;
 MimeType=text/plain;
 StartupNotify=true
