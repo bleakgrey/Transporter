@@ -25,19 +25,15 @@ public class TransporterWindow: Gtk.Dialog {
 
 		wormhole.started.connect(() => spinner.show ());
 		wormhole.closed.connect(() => spinner.hide ());
-
-		wormhole.errored.connect((err) => {
+		wormhole.errored.connect((err, title, critical) => {
 			spinner.hide();
-            Gtk.MessageDialog msg = new Gtk.MessageDialog (this, Gtk.DialogFlags.MODAL, Gtk.MessageType.WARNING, Gtk.ButtonsType.CANCEL, err);
-			msg.response.connect ((response_id) => {
-				switch (response_id) {
-					default:
-					case Gtk.ResponseType.CANCEL:
-						break;
-				}
-				msg.destroy();
-			});
-			msg.show ();
+			var view = new Granite.Widgets.AlertView (title, err, "dialog-warning");
+			view.show_all();
+
+			if(critical)
+				replaceScreen(view);
+			else
+				addScreen(view);
         });
 
 		if(wormhole.bin_present ())
@@ -72,7 +68,7 @@ public class TransporterWindow: Gtk.Dialog {
 	public void addScreen(Widget screen){
 		var box = get_content_area () as Gtk.Box;
 
-		if(screens.length > 0)
+		if(screens.length > 0 && currScreen != null)
 			box.remove (currScreen);
 
 		screens += screen;
@@ -83,9 +79,6 @@ public class TransporterWindow: Gtk.Dialog {
 	}
 
 	public void prevScreen(){
-		if(screens.length <= 1)
-			return;
-
 		if(wormhole.is_running()){
 			Gtk.MessageDialog msg = new Gtk.MessageDialog (this, Gtk.DialogFlags.MODAL, Gtk.MessageType.WARNING, Gtk.ButtonsType.YES_NO,
 				_("Are you sure you want to cancel transaction?"));
@@ -109,6 +102,8 @@ public class TransporterWindow: Gtk.Dialog {
 	}
 
 	private void popScreen(){
+		if(screens.length <= 1)
+			return;
 		var box = get_content_area () as Gtk.Box;
 
 		box.remove (currScreen);
@@ -117,6 +112,15 @@ public class TransporterWindow: Gtk.Dialog {
 		box.add (currScreen);
 		currScreen.show ();
 		updateWindow ();
+	}
+
+	private void replaceScreen(Widget screen){
+		var box = get_content_area () as Gtk.Box;
+
+		box.remove (currScreen);
+		currScreen = null;
+		screens = {};
+		addScreen (screen);
 	}
 
 	public Gtk.FileChooserDialog getFileChooser(){

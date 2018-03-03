@@ -4,11 +4,12 @@ public class WormholeInterface : Object {
 
 	int pid = -1;
 
-	public signal void errored (string err);
-	public signal void ready_to_send (string id);
+
+	public signal void errored (string error, string title = _("Error"), bool critical = false);
+	public signal void code_generated (string wormhole_id);
 	public signal void progress (int percent);
 	public signal void started ();
-	public signal void finished (bool isSuccessful);
+	public signal void finished ();
 	public signal void closed ();
 
 	public string home_path = null;
@@ -58,10 +59,16 @@ public class WormholeInterface : Object {
 		}
 		catch (GLib.SpawnError e){
 			warning(e.message);
+			errored(e.message, _("Installation Error"), true);
 			return false;
 		}
 		closed ();
-		return bin_present ();
+
+		var found = bin_present ();
+		if(!found)
+			errored(_("Couldn't install magic-wormhole automatically."), _("Installation Error"), true);
+
+		return found;
 	}
 
 	public bool is_running(){
@@ -138,33 +145,23 @@ public class WormholeInterface : Object {
 			channel.read_line (out line, null, null);
 			debug ("%s> %s", condition.to_string(), line);
 
-			if(ERR_INVALID_ID in line){
-				errored ("Incorrect ID.");
+			if(ERR_INVALID_ID in line || ERR_MISMATCHED_ID in line){
+				errored (_("Please verify your ID and try again."), _("Invalid ID"));
 				close ();
-				finished (false);
-				return false;
-			}
-			if(ERR_MISMATCHED_ID in line){
-				errored ("ID confirmation failed. Did you type it wrong?");
-				close ();
-				finished (false);
 				return false;
 			}
 			if(ERR_CROWDED in line){
-				errored ("Server denied connection. Check your ID validity or try a bit later.");
+				errored (_("Server is crowded at the moment. "), _("Server Error"));
 				close ();
-				finished (false);
 				return false;
 			}
 			if(ERR_ALREADY_EXISTS in line){
-				errored ("There already is a file with the same name in the Downloads folder.");
+				errored (_("Received file already exists in Downloads folder."), _("File Conflict"));
 				close ();
-				finished (false);
 				return false;
 			}
 			if(ERR_REJECTED in line){
 				close ();
-				finished (false);
 				return false;
 			}
 
@@ -174,12 +171,12 @@ public class WormholeInterface : Object {
 			}
 			if(ID_GENERATED in line){
 				var id = line.split (" ", 3)[2];
-				ready_to_send (id.strip ().replace ("\n",""));
+				code_generated (id.strip ().replace ("\n",""));
 				return false;
 			}
 			if(FINISH_RECEIVE in line){
 				close ();
-				finished (true);
+				finished ();
 			}
 
 

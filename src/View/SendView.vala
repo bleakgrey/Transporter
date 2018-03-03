@@ -20,7 +20,7 @@ public class SendView : ReceiveView {
                 clipboard.set_text (entry.get_text(), -1);
         });
 
-        wormhole.ready_to_send.connect ((id) => {
+        wormhole.code_generated.connect ((id) => {
             title_label.set_text (_("Your Transfer ID"));
             subtitle_label.set_text (_("Share it with the recipient"));
             entry.show ();

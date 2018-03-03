@@ -65,19 +65,12 @@ public class ReceiveView : Gtk.EventBox {
             wormhole.receive (str.strip());
         });
 
-        wormhole.finished.connect ((isSuccessful) => {
+        wormhole.errored.connect(() => entry.set_sensitive (true));
+        wormhole.finished.connect (() => {
             entry.hide();
-            if(isSuccessful){
-                title_label.set_text (_("Transfer Complete"));
-                subtitle_label.set_text (_("Saved in your Downloads folder"));
-            }
-            else{
-                title_label.set_text (_("Transfer Failed"));
-                subtitle_label.set_text (_("Try again in a bit"));
-                entry.set_sensitive(true);
-            }
+            title_label.set_text (_("Transfer Complete"));
+            subtitle_label.set_text (_("Saved in your Downloads folder"));
         });
-
         wormhole.progress.connect((percent) => {
             title_label.set_text (_("Transferring: ") + percent.to_string() + "%");
             subtitle_label.set_text (_("Please wait a moment"));
