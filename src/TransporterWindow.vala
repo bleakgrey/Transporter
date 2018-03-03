@@ -114,7 +114,7 @@ public class TransporterWindow: Gtk.Dialog {
 		updateWindow ();
 	}
 
-	private void replaceScreen(Widget screen){
+	public void replaceScreen(Widget screen){
 		var box = get_content_area () as Gtk.Box;
 
 		box.remove (currScreen);

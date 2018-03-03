@@ -67,6 +67,8 @@ public class WormholeInterface : Object {
 		var found = bin_present ();
 		if(!found)
 			errored(_("Couldn't install magic-wormhole automatically."), _("Installation Error"), true);
+		else
+			finished ();
 
 		return found;
 	}
