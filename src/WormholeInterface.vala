@@ -27,7 +27,7 @@ public class WormholeInterface : Object {
 
 	construct{
 		home_path = GLib.Environment.get_home_dir ();
-		downloads_path = home_path + "/Downloads/";
+		downloads_path = GLib.Environment.get_user_special_dir (UserDirectory.DOWNLOAD);
 	}
 
 	public bool bin_present(){
