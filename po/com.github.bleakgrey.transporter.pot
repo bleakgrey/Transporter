@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.bleakgrey.transporter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-28 17:48+0300\n"
+"POT-Creation-Date: 2018-03-03 17:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,24 +17,60 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/Transporter.vala:41
+#: src/TransporterWindow.vala:52
 msgid "Back"
 msgstr ""
 
-#: src/Transporter.vala:105
+#: src/TransporterWindow.vala:84
 msgid "Are you sure you want to cancel transaction?"
 msgstr ""
 
-#: src/Transporter.vala:137
+#: src/TransporterWindow.vala:128
 msgid "Select files or a folder to send"
 msgstr ""
 
-#: src/Transporter.vala:140
+#: src/TransporterWindow.vala:131
 msgid "_Cancel"
 msgstr ""
 
-#: src/Transporter.vala:142
+#: src/TransporterWindow.vala:133
 msgid "_Open"
+msgstr ""
+
+#: src/WormholeInterface.vala:8
+msgid "Error"
+msgstr ""
+
+#: src/WormholeInterface.vala:62 src/WormholeInterface.vala:69
+msgid "Installation Error"
+msgstr ""
+
+#: src/WormholeInterface.vala:69
+msgid "Couldn't install magic-wormhole automatically."
+msgstr ""
+
+#: src/WormholeInterface.vala:149
+msgid "Please verify your ID and try again."
+msgstr ""
+
+#: src/WormholeInterface.vala:149
+msgid "Invalid ID"
+msgstr ""
+
+#: src/WormholeInterface.vala:154
+msgid "Server is crowded at the moment. "
+msgstr ""
+
+#: src/WormholeInterface.vala:154
+msgid "Server Error"
+msgstr ""
+
+#: src/WormholeInterface.vala:159
+msgid "Received file already exists in Downloads folder."
+msgstr ""
+
+#: src/WormholeInterface.vala:159
+msgid "File Conflict"
 msgstr ""
 
 #: src/View/InstallView.vala:12
@@ -43,14 +79,6 @@ msgstr ""
 
 #: src/View/InstallView.vala:13
 msgid "Installing magic-wormhole"
-msgstr ""
-
-#: src/View/InstallView.vala:25
-msgid "Something's Wrong"
-msgstr ""
-
-#: src/View/InstallView.vala:26
-msgid "Couldn't install magic-wormhole automatically"
 msgstr ""
 
 #: src/View/ReceiveView.vala:13
@@ -70,18 +98,10 @@ msgid "Saved in your Downloads folder"
 msgstr ""
 
 #: src/View/ReceiveView.vala:75
-msgid "Transfer Failed"
-msgstr ""
-
-#: src/View/ReceiveView.vala:76
-msgid "Try again in a bit"
-msgstr ""
-
-#: src/View/ReceiveView.vala:82
 msgid "Transferring: "
 msgstr ""
 
-#: src/View/ReceiveView.vala:83
+#: src/View/ReceiveView.vala:76
 msgid "Please wait a moment"
 msgstr ""
 

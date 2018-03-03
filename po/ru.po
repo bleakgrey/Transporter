@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.bleakgrey.transporter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-28 17:48+0300\n"
+"POT-Creation-Date: 2018-03-03 17:01+0300\n"
 "PO-Revision-Date: 2018-02-28 15:36+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,25 +18,63 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: src/Transporter.vala:41
+#: src/TransporterWindow.vala:52
 msgid "Back"
 msgstr "Назад"
 
-#: src/Transporter.vala:105
+#: src/TransporterWindow.vala:84
 msgid "Are you sure you want to cancel transaction?"
 msgstr "Вы уверены, что хотите отменить передачу?"
 
-#: src/Transporter.vala:137
+#: src/TransporterWindow.vala:128
 msgid "Select files or a folder to send"
-msgstr "Выберите файлы или папку для передачи"
+msgstr "Выберите файлы или папку для отправки"
 
-#: src/Transporter.vala:140
+#: src/TransporterWindow.vala:131
 msgid "_Cancel"
-msgstr "_Отмена"
+msgstr "_Отменить"
 
-#: src/Transporter.vala:142
+#: src/TransporterWindow.vala:133
 msgid "_Open"
-msgstr "_Открыть"
+msgstr "_Выбрать"
+
+#: src/WormholeInterface.vala:8
+msgid "Error"
+msgstr "Ошибка"
+
+#: src/WormholeInterface.vala:62 src/WormholeInterface.vala:69
+msgid "Installation Error"
+msgstr "Ошибка Установки"
+
+#: src/WormholeInterface.vala:69
+#, fuzzy
+msgid "Couldn't install magic-wormhole automatically."
+msgstr "Установить magic-wormhole автоматически не получилось."
+
+#: src/WormholeInterface.vala:149
+msgid "Please verify your ID and try again."
+msgstr "Пожалуйста, проверьте написание ID и попробуйте снова."
+
+#: src/WormholeInterface.vala:149
+msgid "Invalid ID"
+msgstr "Неправильный ID"
+
+#: src/WormholeInterface.vala:154
+msgid "Server is crowded at the moment. "
+msgstr "Сервер на данный момент перегружен."
+
+#: src/WormholeInterface.vala:154
+msgid "Server Error"
+msgstr "Ошибка Сервера"
+
+#: src/WormholeInterface.vala:159
+#, fuzzy
+msgid "Received file already exists in Downloads folder."
+msgstr "Сохранена в вашей папке Загрузок"
+
+#: src/WormholeInterface.vala:159
+msgid "File Conflict"
+msgstr "Конфликт Файлов"
 
 #: src/View/InstallView.vala:12
 msgid "Preparing Transporter"
@@ -45,14 +83,6 @@ msgstr "Подготовка Transporter"
 #: src/View/InstallView.vala:13
 msgid "Installing magic-wormhole"
 msgstr "Установка magic-wormhole"
-
-#: src/View/InstallView.vala:25
-msgid "Something's Wrong"
-msgstr "Что-то пошло не так"
-
-#: src/View/InstallView.vala:26
-msgid "Couldn't install magic-wormhole automatically"
-msgstr "Установить magic-wormhole автоматически не получилось"
 
 #: src/View/ReceiveView.vala:13
 msgid "Enter Transfer ID"
@@ -71,18 +101,10 @@ msgid "Saved in your Downloads folder"
 msgstr "Сохранена в вашей папке Загрузок"
 
 #: src/View/ReceiveView.vala:75
-msgid "Transfer Failed"
-msgstr "Ошибка Передачи"
-
-#: src/View/ReceiveView.vala:76
-msgid "Try again in a bit"
-msgstr "Попробуйте снова немного позже"
-
-#: src/View/ReceiveView.vala:82
 msgid "Transferring: "
 msgstr "Передача: "
 
-#: src/View/ReceiveView.vala:83
+#: src/View/ReceiveView.vala:76
 msgid "Please wait a moment"
 msgstr "Пожалуйста, подождите"
 
@@ -120,7 +142,7 @@ msgstr "Отправить файлы"
 
 #: src/View/WelcomeView.vala:7
 msgid "Upload data to another computer"
-msgstr "Закачать данные на другой компьютер"
+msgstr "Загрузить данные на другой компьютер"
 
 #: src/View/WelcomeView.vala:8
 msgid "Receive Files"
@@ -132,7 +154,7 @@ msgstr "Скачать данные с другого компьютера"
 
 #: src/View/WelcomeView.vala:9
 msgid "Show Downloads"
-msgstr "Показать Загруки"
+msgstr "Показать Загрузки"
 
 #: src/View/WelcomeView.vala:9
 msgid "Open your Downloads folder"

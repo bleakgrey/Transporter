@@ -1,3 +1,4 @@
+src/TransporterWindow.vala
 src/Transporter.vala
 src/WormholeInterface.vala
 src/View/InstallView.vala
