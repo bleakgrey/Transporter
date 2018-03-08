@@ -7,14 +7,13 @@ Simple [magic-wormhole](https://github.com/warner/magic-wormhole) client designe
 ## Building and Installation
 
 You'll need some dependencies to build:
-* gtk+-3.0
-* granite
+* libgranite-dev
 * meson
 * valac
 
 And you'll need these to actually run [magic-wormhole](https://github.com/warner/magic-wormhole):
-* python-pip
 * build-essential
+* python-pip
 * python-dev
 * libffi-dev
 * libssl-dev
