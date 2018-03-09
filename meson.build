@@ -12,6 +12,7 @@ executable(
     meson.project_name(),
     'src/Transporter.vala',
     'src/TransporterWindow.vala',
+    'src/Settings.vala',
     'src/WormholeInterface.vala',
     'src/View/InstallView.vala',
     'src/View/ReceiveView.vala',
@@ -19,10 +20,13 @@ executable(
     'src/View/WelcomeView.vala',
     dependencies: [
         dependency('gtk+-3.0'),
-        dependency('granite')
+        dependency('granite'),
+        dependency('glib-2.0', version: '>=2.30.0')
     ],
     install: true
 )
 
 subdir('data')
 subdir('po')
+
+meson.add_install_script('meson/post_install.py')

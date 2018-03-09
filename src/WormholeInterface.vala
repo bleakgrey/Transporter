@@ -3,6 +3,7 @@ using GLib;
 public class WormholeInterface : Object {
 
 	int pid = -1;
+	Transport.Settings settings;
 
 	public signal void errored (string error, string title = _("Error"), bool critical = false);
 	public signal void code_generated (string wormhole_id);
@@ -29,6 +30,7 @@ public class WormholeInterface : Object {
 	construct{
 		home_path = GLib.Environment.get_home_dir ();
 		downloads_path = GLib.Environment.get_user_special_dir (UserDirectory.DOWNLOAD);
+		settings = Transport.Settings.get_default();
 	}
 
 	public bool bin_present(){
@@ -89,7 +91,7 @@ public class WormholeInterface : Object {
 			}		
 	}
 
-	public void open(string[] argv, string work_dir){
+	private void open(string[] argv, string work_dir){
 		if (is_running ()) return;
 
 		int standard_err;
@@ -126,11 +128,36 @@ public class WormholeInterface : Object {
 
 	}
 
+	private string[] get_launch_args(){
+		string[] args = {wormhole_path.replace ("~", home_path)};
+
+		var relay = settings.server_relay;
+		if(relay != null){
+			args += "--relay-url";
+			args += relay;
+		}
+
+		var transit = settings.server_transit;
+		if(transit != null){
+			args += "--transit-helper";
+			args += transit;
+		}
+
+		return args;
+	}
+
 	public void send(string file){
-		open ({wormhole_path.replace ("~", home_path), "send", file}, home_path);
+		string[] args = get_launch_args();
+		args += "send";
+		args += file;
+		open (args, home_path);
 	}
 	public void receive(string id){
-		open ({wormhole_path.replace ("~", home_path), "receive", "--accept-file", id}, downloads_path);
+		string[] args = get_launch_args();
+		args += "receive";
+		args += "--accept-file";
+		args += id;
+		open (args, downloads_path);
 	}
 
 	private bool process_line (IOChannel channel, IOCondition condition) {

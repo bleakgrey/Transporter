@@ -1,9 +1,9 @@
 using Gtk;
 using Granite;
 
-public class MyApp : Granite.Application {
+public class Transporter : Granite.Application {
 
-	public static MyApp instance;
+	public static Transporter instance;
 	public TransporterWindow window;
 
 	construct {
@@ -15,7 +15,7 @@ public class MyApp : Granite.Application {
 
 	public static int main (string[] args) {
 		Gtk.init (ref args);
-		instance = new MyApp();
+		instance = new Transporter();
 		return instance.run (args);
 	}
 
