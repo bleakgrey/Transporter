@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.bleakgrey.transporter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-09 14:43+0300\n"
+"POT-Creation-Date: 2018-03-09 19:04+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,63 +17,67 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/TransporterWindow.vala:52
+#: src/TransporterWindow.vala:53
 msgid "Back"
 msgstr ""
 
-#: src/TransporterWindow.vala:84
+#: src/TransporterWindow.vala:58
+msgid "Settings"
+msgstr ""
+
+#: src/TransporterWindow.vala:92
 msgid "Are you sure you want to cancel transaction?"
 msgstr ""
 
-#: src/TransporterWindow.vala:128
+#: src/TransporterWindow.vala:136
 msgid "Select files or a folder to send"
 msgstr ""
 
-#: src/TransporterWindow.vala:131
+#: src/TransporterWindow.vala:139
 msgid "_Cancel"
 msgstr ""
 
-#: src/TransporterWindow.vala:133
+#: src/TransporterWindow.vala:141
 msgid "_Open"
 msgstr ""
 
-#: src/WormholeInterface.vala:7
+#: src/WormholeInterface.vala:8
 msgid "Error"
 msgstr ""
 
-#: src/WormholeInterface.vala:62 src/WormholeInterface.vala:69
+#: src/WormholeInterface.vala:64 src/WormholeInterface.vala:71
 msgid "Installation Error"
 msgstr ""
 
-#: src/WormholeInterface.vala:69
+#: src/WormholeInterface.vala:71
 msgid "Couldn't install magic-wormhole automatically."
 msgstr ""
 
-#: src/WormholeInterface.vala:151
+#: src/WormholeInterface.vala:193
 msgid "Please verify your ID and try again."
 msgstr ""
 
-#: src/WormholeInterface.vala:151
+#: src/WormholeInterface.vala:193
 msgid "Invalid ID"
 msgstr ""
 
-#: src/WormholeInterface.vala:156
+#: src/WormholeInterface.vala:198
 msgid "Server is crowded at the moment. "
 msgstr ""
 
-#: src/WormholeInterface.vala:156 src/WormholeInterface.vala:171
+#: src/WormholeInterface.vala:198 src/WormholeInterface.vala:213
 msgid "Server Error"
 msgstr ""
 
-#: src/WormholeInterface.vala:161 src/WormholeInterface.vala:166
+#: src/WormholeInterface.vala:203 src/WormholeInterface.vala:208
 msgid "Received file already exists in Downloads folder."
 msgstr ""
 
-#: src/WormholeInterface.vala:161 src/WormholeInterface.vala:166
+#: src/WormholeInterface.vala:203 src/WormholeInterface.vala:208
 msgid "File Conflict"
 msgstr ""
 
-#: src/WormholeInterface.vala:171
+#: src/WormholeInterface.vala:213
 msgid "Relay server unresponsive."
 msgstr ""
 
@@ -101,15 +105,15 @@ msgstr ""
 msgid "Saved in your Downloads folder"
 msgstr ""
 
-#: src/View/ReceiveView.vala:83
+#: src/View/ReceiveView.vala:84
 msgid "Connection closed unexpectedly."
 msgstr ""
 
-#: src/View/ReceiveView.vala:86
+#: src/View/ReceiveView.vala:87
 msgid "Transferring: "
 msgstr ""
 
-#: src/View/ReceiveView.vala:87
+#: src/View/ReceiveView.vala:88
 msgid "Please wait a moment"
 msgstr ""
 
@@ -163,4 +167,28 @@ msgstr ""
 
 #: src/View/WelcomeView.vala:9
 msgid "Open your Downloads folder"
+msgstr ""
+
+#: src/View/SettingsView.vala:10
+msgid "Servers"
+msgstr ""
+
+#: src/View/SettingsView.vala:11
+msgid "Relay Server:"
+msgstr ""
+
+#: src/View/SettingsView.vala:13
+msgid "Transit Server:"
+msgstr ""
+
+#: src/View/SettingsView.vala:16
+msgid "Miscellaneous"
+msgstr ""
+
+#: src/View/SettingsView.vala:17
+msgid "ID Word Length:"
+msgstr ""
+
+#: src/View/SettingsView.vala:21
+msgid "Play Sounds:"
 msgstr ""

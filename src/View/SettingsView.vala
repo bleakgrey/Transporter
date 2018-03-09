@@ -5,7 +5,7 @@ public class SettingsView : Gtk.Grid {
         column_spacing = 12;
         row_spacing = 6;
         margin = 6;
-        width_request = 350;
+        width_request = 400;
 
         attach (new Granite.HeaderLabel (_("Servers")), 0, 0, 2, 1);
         attach (new SettingsLabel (_("Relay Server:")), 0, 1, 1, 1);
