@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.bleakgrey.transporter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-03 17:01+0300\n"
+"POT-Creation-Date: 2018-03-09 14:43+0300\n"
 "PO-Revision-Date: 2018-02-28 15:36+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -38,7 +38,7 @@ msgstr "_Отменить"
 msgid "_Open"
 msgstr "_Выбрать"
 
-#: src/WormholeInterface.vala:8
+#: src/WormholeInterface.vala:7
 msgid "Error"
 msgstr "Ошибка"
 
@@ -51,60 +51,69 @@ msgstr "Ошибка Установки"
 msgid "Couldn't install magic-wormhole automatically."
 msgstr "Установить magic-wormhole автоматически не получилось."
 
-#: src/WormholeInterface.vala:149
+#: src/WormholeInterface.vala:151
 msgid "Please verify your ID and try again."
 msgstr "Пожалуйста, проверьте написание ID и попробуйте снова."
 
-#: src/WormholeInterface.vala:149
+#: src/WormholeInterface.vala:151
 msgid "Invalid ID"
 msgstr "Неправильный ID"
 
-#: src/WormholeInterface.vala:154
+#: src/WormholeInterface.vala:156
 msgid "Server is crowded at the moment. "
 msgstr "Сервер на данный момент перегружен."
 
-#: src/WormholeInterface.vala:154
+#: src/WormholeInterface.vala:156 src/WormholeInterface.vala:171
 msgid "Server Error"
 msgstr "Ошибка Сервера"
 
-#: src/WormholeInterface.vala:159
+#: src/WormholeInterface.vala:161 src/WormholeInterface.vala:166
 #, fuzzy
 msgid "Received file already exists in Downloads folder."
 msgstr "Сохранена в вашей папке Загрузок"
 
-#: src/WormholeInterface.vala:159
+#: src/WormholeInterface.vala:161 src/WormholeInterface.vala:166
 msgid "File Conflict"
 msgstr "Конфликт Файлов"
 
-#: src/View/InstallView.vala:12
+#: src/WormholeInterface.vala:171
+msgid "Relay server unresponsive."
+msgstr "Сервер-ретранслятор не отвечает."
+
+#: src/View/InstallView.vala:11
 msgid "Preparing Transporter"
 msgstr "Подготовка Transporter"
 
-#: src/View/InstallView.vala:13
+#: src/View/InstallView.vala:12
 msgid "Installing magic-wormhole"
 msgstr "Установка magic-wormhole"
 
-#: src/View/ReceiveView.vala:13
+#: src/View/ReceiveView.vala:14
 msgid "Enter Transfer ID"
 msgstr "Введите ID Передачи"
 
-#: src/View/ReceiveView.vala:18
+#: src/View/ReceiveView.vala:19
 msgid "Ask your partner to send you it"
 msgstr "Спросите его у отправителя"
 
-#: src/View/ReceiveView.vala:71 src/View/SendView.vala:33
+#: src/View/ReceiveView.vala:77 src/View/SendView.vala:33
 msgid "Transfer Complete"
 msgstr "Передача Завершена"
 
-#: src/View/ReceiveView.vala:72
+#: src/View/ReceiveView.vala:78
 msgid "Saved in your Downloads folder"
 msgstr "Сохранена в вашей папке Загрузок"
 
-#: src/View/ReceiveView.vala:75
+#: src/View/ReceiveView.vala:83
+#, fuzzy
+msgid "Connection closed unexpectedly."
+msgstr "Соединение неожиданно разорвано."
+
+#: src/View/ReceiveView.vala:86
 msgid "Transferring: "
 msgstr "Передача: "
 
-#: src/View/ReceiveView.vala:76
+#: src/View/ReceiveView.vala:87
 msgid "Please wait a moment"
 msgstr "Пожалуйста, подождите"
 

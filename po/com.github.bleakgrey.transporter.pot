@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.bleakgrey.transporter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-03 17:01+0300\n"
+"POT-Creation-Date: 2018-03-09 14:43+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,7 +37,7 @@ msgstr ""
 msgid "_Open"
 msgstr ""
 
-#: src/WormholeInterface.vala:8
+#: src/WormholeInterface.vala:7
 msgid "Error"
 msgstr ""
 
@@ -49,59 +49,67 @@ msgstr ""
 msgid "Couldn't install magic-wormhole automatically."
 msgstr ""
 
-#: src/WormholeInterface.vala:149
+#: src/WormholeInterface.vala:151
 msgid "Please verify your ID and try again."
 msgstr ""
 
-#: src/WormholeInterface.vala:149
+#: src/WormholeInterface.vala:151
 msgid "Invalid ID"
 msgstr ""
 
-#: src/WormholeInterface.vala:154
+#: src/WormholeInterface.vala:156
 msgid "Server is crowded at the moment. "
 msgstr ""
 
-#: src/WormholeInterface.vala:154
+#: src/WormholeInterface.vala:156 src/WormholeInterface.vala:171
 msgid "Server Error"
 msgstr ""
 
-#: src/WormholeInterface.vala:159
+#: src/WormholeInterface.vala:161 src/WormholeInterface.vala:166
 msgid "Received file already exists in Downloads folder."
 msgstr ""
 
-#: src/WormholeInterface.vala:159
+#: src/WormholeInterface.vala:161 src/WormholeInterface.vala:166
 msgid "File Conflict"
 msgstr ""
 
-#: src/View/InstallView.vala:12
+#: src/WormholeInterface.vala:171
+msgid "Relay server unresponsive."
+msgstr ""
+
+#: src/View/InstallView.vala:11
 msgid "Preparing Transporter"
 msgstr ""
 
-#: src/View/InstallView.vala:13
+#: src/View/InstallView.vala:12
 msgid "Installing magic-wormhole"
 msgstr ""
 
-#: src/View/ReceiveView.vala:13
+#: src/View/ReceiveView.vala:14
 msgid "Enter Transfer ID"
 msgstr ""
 
-#: src/View/ReceiveView.vala:18
+#: src/View/ReceiveView.vala:19
 msgid "Ask your partner to send you it"
 msgstr ""
 
-#: src/View/ReceiveView.vala:71 src/View/SendView.vala:33
+#: src/View/ReceiveView.vala:77 src/View/SendView.vala:33
 msgid "Transfer Complete"
 msgstr ""
 
-#: src/View/ReceiveView.vala:72
+#: src/View/ReceiveView.vala:78
 msgid "Saved in your Downloads folder"
 msgstr ""
 
-#: src/View/ReceiveView.vala:75
+#: src/View/ReceiveView.vala:83
+msgid "Connection closed unexpectedly."
+msgstr ""
+
+#: src/View/ReceiveView.vala:86
 msgid "Transferring: "
 msgstr ""
 
-#: src/View/ReceiveView.vala:76
+#: src/View/ReceiveView.vala:87
 msgid "Please wait a moment"
 msgstr ""
 
