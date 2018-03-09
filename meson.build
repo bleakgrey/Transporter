@@ -18,6 +18,7 @@ executable(
     'src/View/ReceiveView.vala',
     'src/View/SendView.vala',
     'src/View/WelcomeView.vala',
+    'src/View/SettingsView.vala',
     dependencies: [
         dependency('gtk+-3.0'),
         dependency('granite'),

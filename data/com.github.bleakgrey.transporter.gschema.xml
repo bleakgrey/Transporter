@@ -16,5 +16,10 @@
 			<summary>Play Ding</summary>
 			<description>Play sounds on transfer completion.</description>
 		</key>
+		<key name="words" type="i">
+			<default>2</default>
+			<summary>Words Count</summary>
+			<description>Sets how many words should Transfer ID contain.</description>
+		</key>
 	</schema>
 </schemalist>

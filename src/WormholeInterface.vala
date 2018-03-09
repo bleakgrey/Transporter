@@ -1,9 +1,9 @@
 using GLib;
 
-public class WormholeInterface : Object {
+public class WormholeInterface : Object { // paplay /usr/share/sounds/freedesktop/stereo/complete.oga
 
 	int pid = -1;
-	Transport.Settings settings;
+	TransporterSettings settings;
 
 	public signal void errored (string error, string title = _("Error"), bool critical = false);
 	public signal void code_generated (string wormhole_id);
@@ -30,7 +30,7 @@ public class WormholeInterface : Object {
 	construct{
 		home_path = GLib.Environment.get_home_dir ();
 		downloads_path = GLib.Environment.get_user_special_dir (UserDirectory.DOWNLOAD);
-		settings = Transport.Settings.get_default();
+		settings = TransporterSettings.get_default();
 	}
 
 	public bool bin_present(){
@@ -150,6 +150,12 @@ public class WormholeInterface : Object {
 		string[] args = get_launch_args();
 		args += "send";
 		args += file;
+
+		var words = settings.words;
+		if(words > -1){
+			args += "--code-length";
+			args += words.to_string();
+		}
 		open (args, home_path);
 	}
 	public void receive(string id){

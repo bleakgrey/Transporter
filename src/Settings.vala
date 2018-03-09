@@ -1,18 +1,19 @@
-public class Transport.Settings : Granite.Services.Settings {
+public class TransporterSettings : Granite.Services.Settings {
 
-        private static Settings? instance;
+        private static TransporterSettings? instance;
         public string server_relay { get; set; }
         public string server_transit { get; set; }
         public bool ding { get; set; }
+        public int words { get; set; }
 
-        public static unowned Settings get_default () {
+        public static unowned TransporterSettings get_default () {
             if (instance == null) {
-                instance = new Settings ();
+                instance = new TransporterSettings ();
             }
             return instance;
         }
 
-        private Settings () {
+        private TransporterSettings () {
             base ("com.github.bleakgrey.transporter");
         }
 
