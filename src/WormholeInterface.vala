@@ -4,7 +4,6 @@ public class WormholeInterface : Object {
 
 	int pid = -1;
 
-
 	public signal void errored (string error, string title = _("Error"), bool critical = false);
 	public signal void code_generated (string wormhole_id);
 	public signal void progress (int percent);
@@ -22,6 +21,7 @@ public class WormholeInterface : Object {
 	public const string ERR_REJECTED = "transfer rejected";
 	public const string ERR_ALREADY_EXISTS = "overwrite existing";
 	public const string ERR_MISMATCHED_ID = "confirmation failed";
+	public const string ERR_RELAY_UNRESPONSIVE = "We had a problem connecting to the relay";
 	public const string ID_GENERATED = "wormhole receive";
 	public const string FINISH_RECEIVE = "Received file written";
 	public const string PERCENT_RECEIVE = "%|";
@@ -162,7 +162,13 @@ public class WormholeInterface : Object {
 				close ();
 				return false;
 			}
-			if(ERR_REJECTED in line){
+			if(ERR_ALREADY_EXISTS in line){
+				errored (_("Received file already exists in Downloads folder."), _("File Conflict"));
+				close ();
+				return false;
+			}
+			if(ERR_RELAY_UNRESPONSIVE in line){
+				errored (_("Relay server unresponsive."), _("Server Error"));
 				close ();
 				return false;
 			}
@@ -177,8 +183,8 @@ public class WormholeInterface : Object {
 				return false;
 			}
 			if(FINISH_RECEIVE in line){
-				close ();
 				finished ();
+				close ();
 			}
 
 

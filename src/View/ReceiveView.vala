@@ -1,5 +1,6 @@
 public class ReceiveView : Gtk.EventBox {
 
+    protected bool is_finished = false;
     protected WormholeInterface wormhole;
 
     protected Gtk.Label title_label;
@@ -60,16 +61,26 @@ public class ReceiveView : Gtk.EventBox {
                 entry.set_text ("");
         });
         entry.activate.connect (() => {
+            is_finished = false;
             unowned string str = entry.get_text ();
             entry.set_sensitive (false);
             wormhole.receive (str.strip());
         });
 
-        wormhole.errored.connect(() => entry.set_sensitive (true));
+        wormhole.errored.connect(() => {
+            is_finished = true;
+            entry.set_sensitive (true);
+        });
         wormhole.finished.connect (() => {
+            is_finished = true;
             entry.hide();
             title_label.set_text (_("Transfer Complete"));
             subtitle_label.set_text (_("Saved in your Downloads folder"));
+        });
+        wormhole.closed.connect(() => {
+            entry.set_sensitive (true);
+            if(!is_finished)
+                wormhole.errored (_("Connection closed unexpectedly."));
         });
         wormhole.progress.connect((percent) => {
             title_label.set_text (_("Transferring: ") + percent.to_string() + "%");
