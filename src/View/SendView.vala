@@ -32,6 +32,7 @@ public class SendView : ReceiveView {
             entry.hide ();
             title_label.set_text (_("Transfer Complete"));
             subtitle_label.set_text (_("Connection has been closed"));
+            wormhole.ding();
         });
     }
 

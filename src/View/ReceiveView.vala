@@ -76,6 +76,7 @@ public class ReceiveView : Gtk.EventBox {
             entry.hide();
             title_label.set_text (_("Transfer Complete"));
             subtitle_label.set_text (_("Saved in your Downloads folder"));
+            wormhole.ding();
         });
         wormhole.closed.connect(() => {
             entry.set_sensitive (true);

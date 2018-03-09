@@ -1,6 +1,6 @@
 using GLib;
 
-public class WormholeInterface : Object { // paplay /usr/share/sounds/freedesktop/stereo/complete.oga
+public class WormholeInterface : Object {
 
 	int pid = -1;
 	TransporterSettings settings;
@@ -164,6 +164,15 @@ public class WormholeInterface : Object { // paplay /usr/share/sounds/freedeskto
 		args += "--accept-file";
 		args += id;
 		open (args, downloads_path);
+	}
+
+	public void ding(){
+		if(settings.ding){
+			try{
+				Process.spawn_command_line_async ("paplay /usr/share/sounds/freedesktop/stereo/complete.oga");
+			}
+			catch (GLib.SpawnError e){}
+		}
 	}
 
 	private bool process_line (IOChannel channel, IOCondition condition) {

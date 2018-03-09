@@ -24,17 +24,17 @@ public class TransporterWindow: Gtk.Dialog {
 		this.window_position = WindowPosition.CENTER;
 		this.set_titlebar (headerbar);
 
-		wormhole.started.connect(() => spinner.show ());
-		wormhole.closed.connect(() => spinner.hide ());
-		wormhole.errored.connect((err, title, critical) => {
-			spinner.hide();
+		wormhole.started.connect (() => spinner.show ());
+		wormhole.closed.connect (() => spinner.hide ());
+		wormhole.errored.connect ((err, title, critical) => {
+			spinner.hide ();
 			var view = new Granite.Widgets.AlertView (title, err, "dialog-warning");
-			view.show_all();
+			view.show_all ();
 
 			if(critical)
-				replaceScreen(view);
+				replaceScreen (view);
 			else
-				addScreen(view);
+				addScreen (view);
         });
 
 		if(wormhole.bin_present ())
@@ -104,7 +104,7 @@ public class TransporterWindow: Gtk.Dialog {
 			msg.show ();
 		}
 		else{
-			popScreen();
+			popScreen ();
 		}
 
 	}
