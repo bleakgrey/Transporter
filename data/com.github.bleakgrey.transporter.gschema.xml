@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+	<schema path="/com/github/bleakgrey/transporter/" id="com.github.bleakgrey.transporter" gettext-domain="com.github.bleakgrey.transporter">
+		<key name="server-relay" type="s">
+			<default>'ws://relay.magic-wormhole.io:4000/v1'</default>
+			<summary>Relay Server</summary>
+			<description>Rendezvous server to use (URL).</description>
+		</key>
+		<key name="server-transit" type="s">
+			<default>'tcp:transit.magic-wormhole.io:4001'</default>
+			<summary>Transit Server</summary>
+			<description>Transit server to use (tcp:HOST:PORT).</description>
+		</key>
+		<key name="ding" type="b">
+			<default>true</default>
+			<summary>Play Ding</summary>
+			<description>Play sounds on transfer completion.</description>
+		</key>
+		<key name="words" type="i">
+			<default>2</default>
+			<summary>Words Count</summary>
+			<description>Sets how many words should Transfer ID contain.</description>
+		</key>
+	</schema>
+</schemalist>

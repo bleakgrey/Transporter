@@ -5,3 +5,4 @@ src/View/InstallView.vala
 src/View/ReceiveView.vala
 src/View/SendView.vala
 src/View/WelcomeView.vala
+src/View/SettingsView.vala

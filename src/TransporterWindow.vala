@@ -4,6 +4,7 @@ public class TransporterWindow: Gtk.Dialog {
 
 	HeaderBar headerbar;
 	Button back_button;
+	Button settings_button;
 	Spinner spinner;
 
 	Widget currScreen;
@@ -23,17 +24,17 @@ public class TransporterWindow: Gtk.Dialog {
 		this.window_position = WindowPosition.CENTER;
 		this.set_titlebar (headerbar);
 
-		wormhole.started.connect(() => spinner.show ());
-		wormhole.closed.connect(() => spinner.hide ());
-		wormhole.errored.connect((err, title, critical) => {
-			spinner.hide();
+		wormhole.started.connect (() => spinner.show ());
+		wormhole.closed.connect (() => spinner.hide ());
+		wormhole.errored.connect ((err, title, critical) => {
+			spinner.hide ();
 			var view = new Granite.Widgets.AlertView (title, err, "dialog-warning");
-			view.show_all();
+			view.show_all ();
 
 			if(critical)
-				replaceScreen(view);
+				replaceScreen (view);
 			else
-				addScreen(view);
+				addScreen (view);
         });
 
 		if(wormhole.bin_present ())
@@ -53,9 +54,15 @@ public class TransporterWindow: Gtk.Dialog {
         back_button.get_style_context ().add_class (Granite.STYLE_CLASS_BACK_BUTTON);
         back_button.clicked.connect (() => prevScreen ());
 
+        settings_button = new Button ();
+        settings_button.tooltip_text = _("Settings");
+        settings_button.image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR);
+        settings_button.clicked.connect (() => addScreen (new SettingsView ()));
+
 		headerbar = new HeaderBar ();
 		headerbar.set_show_close_button (true);
 		headerbar.title = "Transporter";
+		headerbar.pack_end (settings_button);
 		headerbar.pack_end (spinner);
 		headerbar.pack_start (back_button);
 		headerbar.show ();
@@ -63,6 +70,7 @@ public class TransporterWindow: Gtk.Dialog {
 
 	private void updateWindow(){
 		back_button.visible = !(currScreen is WelcomeView) && screens.length > 1;
+		settings_button.visible = currScreen is WelcomeView;
 	}
 
 	public void addScreen(Widget screen){
@@ -96,7 +104,7 @@ public class TransporterWindow: Gtk.Dialog {
 			msg.show ();
 		}
 		else{
-			popScreen();
+			popScreen ();
 		}
 
 	}
