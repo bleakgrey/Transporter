@@ -1,4 +1,5 @@
 # Transporter
+[![Get it on AppCenter](https://appcenter.elementary.io/badge.svg)](https://appcenter.elementary.io/com.github.bleakgrey.transporter)
 
 Simple [magic-wormhole](https://github.com/warner/magic-wormhole) client designed for elementary OS.
 
