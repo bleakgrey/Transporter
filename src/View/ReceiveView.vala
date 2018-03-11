@@ -13,7 +13,7 @@ public class ReceiveView : Gtk.EventBox {
         title_label.hexpand = true;
         title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
 
-        subtitle_label = new Gtk.Label (_("Ask your partner to send you it"));
+        subtitle_label = new Gtk.Label (_("Ask the sender to share it"));
         subtitle_label.justify = Gtk.Justification.CENTER;
         subtitle_label.hexpand = true;
         subtitle_label.wrap = true;

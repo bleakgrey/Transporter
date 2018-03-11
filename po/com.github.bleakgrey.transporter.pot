@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.bleakgrey.transporter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-09 19:04+0300\n"
+"POT-Creation-Date: 2018-03-11 15:05+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,27 +17,27 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/TransporterWindow.vala:53
+#: src/TransporterWindow.vala:52
 msgid "Back"
 msgstr ""
 
-#: src/TransporterWindow.vala:58
+#: src/TransporterWindow.vala:57
 msgid "Settings"
 msgstr ""
 
-#: src/TransporterWindow.vala:92
+#: src/TransporterWindow.vala:91
 msgid "Are you sure you want to cancel transaction?"
 msgstr ""
 
-#: src/TransporterWindow.vala:136
+#: src/TransporterWindow.vala:135
 msgid "Select files or a folder to send"
 msgstr ""
 
-#: src/TransporterWindow.vala:139
+#: src/TransporterWindow.vala:138
 msgid "_Cancel"
 msgstr ""
 
-#: src/TransporterWindow.vala:141
+#: src/TransporterWindow.vala:140
 msgid "_Open"
 msgstr ""
 
@@ -89,31 +89,31 @@ msgstr ""
 msgid "Installing magic-wormhole"
 msgstr ""
 
-#: src/View/ReceiveView.vala:14
+#: src/View/ReceiveView.vala:11
 msgid "Enter Transfer ID"
 msgstr ""
 
-#: src/View/ReceiveView.vala:19
-msgid "Ask your partner to send you it"
+#: src/View/ReceiveView.vala:16
+msgid "Ask the sender to share it"
 msgstr ""
 
-#: src/View/ReceiveView.vala:77 src/View/SendView.vala:33
+#: src/View/ReceiveView.vala:74 src/View/SendView.vala:33
 msgid "Transfer Complete"
 msgstr ""
 
-#: src/View/ReceiveView.vala:78
+#: src/View/ReceiveView.vala:75
 msgid "Saved in your Downloads folder"
 msgstr ""
 
-#: src/View/ReceiveView.vala:84
+#: src/View/ReceiveView.vala:81
 msgid "Connection closed unexpectedly."
 msgstr ""
 
-#: src/View/ReceiveView.vala:87
+#: src/View/ReceiveView.vala:84
 msgid "Transferring: "
 msgstr ""
 
-#: src/View/ReceiveView.vala:88
+#: src/View/ReceiveView.vala:85
 msgid "Please wait a moment"
 msgstr ""
 
