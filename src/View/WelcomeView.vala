@@ -34,8 +34,9 @@ public class WelcomeView : Gtk.Grid {
                     break;
             }
         });
-
+        welcome.get_style_context ().remove_class (Gtk.STYLE_CLASS_VIEW);
         welcome.margin = 16;
+        
         add (welcome);
         show_all ();
     }

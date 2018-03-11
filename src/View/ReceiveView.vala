@@ -8,9 +8,6 @@ public class ReceiveView : Gtk.EventBox {
     protected Gtk.Entry entry;
 
     construct {
-        get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
-        get_style_context ().add_class (Granite.STYLE_CLASS_WELCOME);
-
         title_label = new Gtk.Label (_("Enter Transfer ID"));
         title_label.justify = Gtk.Justification.CENTER;
         title_label.hexpand = true;

@@ -45,7 +45,6 @@ public class TransporterWindow: Gtk.Dialog {
 
 	construct{
 		get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-		get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
 
 		spinner = new Gtk.Spinner ();
 		spinner.active = true;
