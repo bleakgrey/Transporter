@@ -1,5 +1,6 @@
-transporter (1.1.0) xenial; urgency=low
+transporter (1.1.1) xenial; urgency=low
 
-  * Added Settings
+  * Minor UI tweaks
+  * Corrected typos
 
  -- Glushchenko Artyom <bleakgrey@gmail.com>  Tue, 27 Feb 2018 10:00:00 -0500
