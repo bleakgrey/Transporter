@@ -24,7 +24,7 @@ public class WormholeInterface : Object {
 	public const string ERR_MISMATCHED_ID = "confirmation failed";
 	public const string ERR_RELAY_UNRESPONSIVE = "We had a problem connecting to the relay";
 	public const string ID_GENERATED = "wormhole receive";
-	public const string FINISH_RECEIVE = "Received file written";
+	public const string FINISH_RECEIVE = "written";
 	public const string PERCENT_RECEIVE = "%|";
 
 	construct{
