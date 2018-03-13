@@ -16,11 +16,9 @@ public class TransporterWindow: Gtk.Dialog {
 	     Object (application: application,
 	     icon_name: "com.github.bleakgrey.transporter",
 	        title: "Transporter",
-	        resizable: false,
-	        width_request: 470,
-	        height_request: 470
+	        resizable: false
 	    );
-	    this.wormhole = new WormholeInterface();
+	    this.wormhole = new WormholeInterface ();
 		this.window_position = WindowPosition.CENTER;
 		this.set_titlebar (headerbar);
 
@@ -38,13 +36,14 @@ public class TransporterWindow: Gtk.Dialog {
         });
 
 		if(wormhole.bin_present ())
-			addScreen(new WelcomeView (this));
+			addScreen (new WelcomeView (this));
 		else
-			addScreen(new InstallView (this, wormhole));
+			addScreen (new InstallView (this, wormhole));
 	} 
 
 	construct{
 		get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+		get_content_area ().set_size_request (400, 400);
 
 		spinner = new Gtk.Spinner ();
 		spinner.active = true;
