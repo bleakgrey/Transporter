@@ -1,10 +1,7 @@
 public class InstallView : ReceiveView {
 
-    private TransporterWindow window;
-
-	public InstallView(TransporterWindow window, WormholeInterface wormhole){
-		base (wormhole);
-        this.window = window;
+	public InstallView(TransporterWindow window){
+		base (window);
 	}
 
     protected override void setup(){

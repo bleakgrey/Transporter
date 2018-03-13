@@ -18,6 +18,7 @@ public class DropView : Gtk.Box {
 
 	private Gtk.Label title;
 
+    protected TransporterWindow window;
     protected WormholeInterface wormhole;
 
 	construct {
@@ -49,8 +50,9 @@ public class DropView : Gtk.Box {
         drag_data_received.connect (this.on_drag_data_received);
 	}
 
-    public DropView(WormholeInterface wormhole){
-        this.wormhole = wormhole;
+    public DropView(TransporterWindow window){
+    	this.window = window;
+        this.wormhole = window.wormhole;
     }
 
     private bool on_drag_motion (DragContext context, int x, int y, uint time){

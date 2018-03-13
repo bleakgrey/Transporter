@@ -2,8 +2,8 @@ public class SendView : ReceiveView {
 
     protected Gtk.Clipboard clipboard;
 
-	public SendView(WormholeInterface wormhole, Gtk.Clipboard clipboard){
-		base (wormhole);
+	public SendView(TransporterWindow window, Gtk.Clipboard clipboard){
+		base (window);
         this.clipboard = clipboard;
 	}
 

@@ -38,7 +38,7 @@ public class TransporterWindow: Gtk.Dialog {
 		if(wormhole.bin_present ())
 			addScreen (new WelcomeView (this));
 		else
-			addScreen (new InstallView (this, wormhole));
+			addScreen (new InstallView (this));
 	} 
 
 	construct{
