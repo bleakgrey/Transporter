@@ -53,6 +53,8 @@ public class DropView : Gtk.Box {
     public DropView(TransporterWindow window){
     	this.window = window;
         this.wormhole = window.wormhole;
+
+        wormhole.closed.connect(() => title.label = DRAG_TEXT);
     }
 
     private bool on_drag_motion (DragContext context, int x, int y, uint time){
@@ -65,11 +67,14 @@ public class DropView : Gtk.Box {
     }
 
 	private void on_drag_data_received (Gdk.DragContext drag_context, int x, int y, Gtk.SelectionData data, uint info, uint time){
-	    title.label = _("One moment...");
 	    Gtk.drag_finish (drag_context, true, false, time);
+	    title.label = _("One moment...");
 
 	    var path = Utils.get_send_path (data.get_uris ());
-	    warning(path);
+        var display = window.get_display ();
+        var clipboard = Gtk.Clipboard.get_for_display (display, Gdk.SELECTION_CLIPBOARD);
+        window.addScreen (new SendView (window, clipboard));
+        window.wormhole.send (path);
 	}
 
 }

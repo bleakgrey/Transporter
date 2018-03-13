@@ -11,11 +11,7 @@ public class WelcomeView : Gtk.Grid {
         welcome.activated.connect ((index) => {
             switch (index) {
                 case 0:
-                    // var file = chooser.get_filename ();
-                    // var display = window.get_display ();
-                    // var clipboard = Gtk.Clipboard.get_for_display (display, Gdk.SELECTION_CLIPBOARD);
                     window.addScreen (new DropView (window));
-                    //window.wormhole.send (file);
                     break;
                 case 1:
                     window.addScreen (new ReceiveView (window));

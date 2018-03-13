@@ -14,7 +14,7 @@ public class InstallView : ReceiveView {
         });
 
         if(Thread.supported ()){
-            var thread = new Thread<bool>.try ("InstallThread", () => {
+            new Thread<bool>.try ("InstallThread", () => {
                 wormhole.install ();
                 return false;
             });

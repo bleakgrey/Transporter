@@ -12,6 +12,6 @@ Standards-Version: 3.9.3
 
 Package: com.github.bleakgrey.transporter
 Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}, python-pip, build-essential, python-dev, libffi-dev, libssl-dev
+Depends: ${misc:Depends}, ${shlibs:Depends}, python-pip, build-essential, python-dev, libffi-dev, libssl-dev, zip
 Description: Simple file transfer
  A magic-wormhole client that makes file transfer between computers a breeze.
