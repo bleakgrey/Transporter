@@ -1,6 +1,7 @@
 public class WelcomeView : Gtk.Grid {
 
-    TransporterWindow window;
+    protected TransporterWindow window;
+    protected WormholeInterface wormhole;
 
     construct {
         var welcome = new Granite.Widgets.Welcome (_("Welcome to Transporter"), _("What would you like to do?"));
@@ -10,23 +11,14 @@ public class WelcomeView : Gtk.Grid {
         welcome.activated.connect ((index) => {
             switch (index) {
                 case 0:
-                    var chooser = window.getFileChooser ();
-                    if (chooser.run () == Gtk.ResponseType.ACCEPT) {
-                        var file = chooser.get_filename ();
-                        var display = window.get_display ();
-                        var clipboard = Gtk.Clipboard.get_for_display (display, Gdk.SELECTION_CLIPBOARD);
-
-                        window.addScreen (new SendView (window.wormhole, clipboard));
-                        window.wormhole.send (file);
-                    }
-                    chooser.close ();
+                    window.addScreen (new DropView (window));
                     break;
                 case 1:
-                    window.addScreen (new ReceiveView (window.wormhole));
+                    window.addScreen (new ReceiveView (window));
                     break;
                 case 2:
                     try{
-                        AppInfo.launch_default_for_uri ("file://" + window.wormhole.downloads_path, null);
+                        AppInfo.launch_default_for_uri ("file://" + wormhole.downloads_path, null);
                     }
                     catch(GLib.Error e){
                         warning(e.message);
@@ -43,6 +35,7 @@ public class WelcomeView : Gtk.Grid {
 
     public WelcomeView(TransporterWindow window){
         this.window = window;
+        this.wormhole = window.wormhole;
     }
 
 }

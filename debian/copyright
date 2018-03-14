@@ -3,7 +3,7 @@ Upstream-Name: transporter
 Source: https://github.com/bleakgrey/transporter
 
 Files: *
-Copyright: 2013 elementary LLC.
+Copyright: 2018 bleak_grey <bleakgrey@gmail.com>
 License: GPL-3.0+
 
 License: GPL-3.0+

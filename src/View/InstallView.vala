@@ -1,10 +1,7 @@
 public class InstallView : ReceiveView {
 
-    private TransporterWindow window;
-
-	public InstallView(TransporterWindow window, WormholeInterface wormhole){
-		base (wormhole);
-        this.window = window;
+	public InstallView(TransporterWindow window){
+		base (window);
 	}
 
     protected override void setup(){
@@ -17,7 +14,7 @@ public class InstallView : ReceiveView {
         });
 
         if(Thread.supported ()){
-            var thread = new Thread<bool>.try ("InstallThread", () => {
+            new Thread<bool>.try ("InstallThread", () => {
                 wormhole.install ();
                 return false;
             });

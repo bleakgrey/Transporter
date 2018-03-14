@@ -7,7 +7,7 @@ public class TransporterWindow: Gtk.Dialog {
 	Button settings_button;
 	Spinner spinner;
 
-	Widget currScreen;
+	Widget current_screen;
 	Widget[] screens;
 
 	public WormholeInterface wormhole;
@@ -16,11 +16,9 @@ public class TransporterWindow: Gtk.Dialog {
 	     Object (application: application,
 	     icon_name: "com.github.bleakgrey.transporter",
 	        title: "Transporter",
-	        resizable: false,
-	        width_request: 470,
-	        height_request: 470
+	        resizable: false
 	    );
-	    this.wormhole = new WormholeInterface();
+	    this.wormhole = new WormholeInterface ();
 		this.window_position = WindowPosition.CENTER;
 		this.set_titlebar (headerbar);
 
@@ -38,13 +36,14 @@ public class TransporterWindow: Gtk.Dialog {
         });
 
 		if(wormhole.bin_present ())
-			addScreen(new WelcomeView (this));
+			addScreen (new WelcomeView (this));
 		else
-			addScreen(new InstallView (this, wormhole));
+			addScreen (new InstallView (this));
 	} 
 
 	construct{
 		get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+		get_content_area ().set_size_request (400, 400);
 
 		spinner = new Gtk.Spinner ();
 		spinner.active = true;
@@ -67,22 +66,22 @@ public class TransporterWindow: Gtk.Dialog {
 		headerbar.show ();
 	}
 
-	private void updateWindow(){
-		back_button.visible = !(currScreen is WelcomeView) && screens.length > 1;
-		settings_button.visible = currScreen is WelcomeView;
+	private void update_header(){
+		back_button.visible = !(current_screen is WelcomeView) && screens.length > 1;
+		settings_button.visible = current_screen is WelcomeView;
 	}
 
 	public void addScreen(Widget screen){
 		var box = get_content_area () as Gtk.Box;
 
-		if(screens.length > 0 && currScreen != null)
-			box.remove (currScreen);
+		if(screens.length > 0 && current_screen != null)
+			box.remove (current_screen);
 
 		screens += screen;
-		currScreen = screen;
-		box.add (currScreen);
-		currScreen.show ();
-		updateWindow ();
+		current_screen = screen;
+		box.add (current_screen);
+		current_screen.show ();
+		update_header ();
 	}
 
 	public void prevScreen(){
@@ -113,33 +112,22 @@ public class TransporterWindow: Gtk.Dialog {
 			return;
 		var box = get_content_area () as Gtk.Box;
 
-		box.remove (currScreen);
+		box.remove (current_screen);
 		screens.resize (screens.length - 1);
-		currScreen = screens[screens.length - 1];
-		box.add (currScreen);
-		currScreen.show ();
-		updateWindow ();
+		current_screen.destroy();
+		current_screen = screens[screens.length - 1];
+		box.add (current_screen);
+		current_screen.show ();
+		update_header ();
 	}
 
 	public void replaceScreen(Widget screen){
 		var box = get_content_area () as Gtk.Box;
 
-		box.remove (currScreen);
-		currScreen = null;
+		box.remove (current_screen);
+		current_screen = null;
 		screens = {};
 		addScreen (screen);
-	}
-
-	public Gtk.FileChooserDialog getFileChooser(){
-		return new Gtk.FileChooserDialog (
-			_("Select files or a folder to send"),
-			this,
-			Gtk.FileChooserAction.OPEN,
-			_("_Cancel"),
-			Gtk.ResponseType.CANCEL,
-			_("_Open"),
-			Gtk.ResponseType.ACCEPT
-		);
 	}
 
 }

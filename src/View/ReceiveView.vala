@@ -1,6 +1,8 @@
 public class ReceiveView : Gtk.EventBox {
 
     protected bool is_finished = false;
+
+    protected TransporterWindow window;
     protected WormholeInterface wormhole;
 
     protected Gtk.Label title_label;
@@ -46,8 +48,9 @@ public class ReceiveView : Gtk.EventBox {
         show_all ();
     }
 
-    public ReceiveView(WormholeInterface wormhole){
-        this.wormhole = wormhole;
+    public ReceiveView(TransporterWindow window){
+        this.window = window;
+        this.wormhole = window.wormhole;
         this.setup ();
     }
 

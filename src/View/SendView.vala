@@ -2,8 +2,8 @@ public class SendView : ReceiveView {
 
     protected Gtk.Clipboard clipboard;
 
-	public SendView(WormholeInterface wormhole, Gtk.Clipboard clipboard){
-		base (wormhole);
+	public SendView(TransporterWindow window, Gtk.Clipboard clipboard){
+		base (window);
         this.clipboard = clipboard;
 	}
 
@@ -33,6 +33,7 @@ public class SendView : ReceiveView {
             title_label.set_text (_("Transfer Complete"));
             subtitle_label.set_text (_("Connection has been closed"));
             wormhole.ding();
+            Utils.clean_temp();
         });
     }
 

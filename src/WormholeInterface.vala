@@ -20,11 +20,13 @@ public class WormholeInterface : Object {
 	public const string ERR_INVALID_ID = "reenter the key";
 	public const string ERR_CROWDED = "crowded";
 	public const string ERR_REJECTED = "transfer rejected";
+	public const string ERR_NOT_FOUND = "no file/directory";
 	public const string ERR_ALREADY_EXISTS = "overwrite existing";
 	public const string ERR_MISMATCHED_ID = "confirmation failed";
 	public const string ERR_RELAY_UNRESPONSIVE = "We had a problem connecting to the relay";
+	public const string ERR_UNREADABLE = "file you wanted to send couldn't be read";
 	public const string ID_GENERATED = "wormhole receive";
-	public const string FINISH_RECEIVE = "Received file written";
+	public const string FINISH_RECEIVE = "written";
 	public const string PERCENT_RECEIVE = "%|";
 
 	construct{
@@ -200,17 +202,27 @@ public class WormholeInterface : Object {
 				return false;
 			}
 			if(ERR_ALREADY_EXISTS in line){
-				errored (_("Received file already exists in Downloads folder."), _("File Conflict"));
+				errored (_("Received file already exists in Downloads folder."), _("I/O Error"));
 				close ();
 				return false;
 			}
 			if(ERR_ALREADY_EXISTS in line){
-				errored (_("Received file already exists in Downloads folder."), _("File Conflict"));
+				errored (_("Received file already exists in Downloads folder."), _("I/O Error"));
 				close ();
 				return false;
 			}
 			if(ERR_RELAY_UNRESPONSIVE in line){
 				errored (_("Relay server unresponsive."), _("Server Error"));
+				close ();
+				return false;
+			}
+			if(ERR_UNREADABLE in line){
+				errored (_("Please make sure selected files do not contain special characters in their paths and names."), _("I/O Error"));
+				close ();
+				return false;
+			}
+			if(ERR_NOT_FOUND in line){
+				errored (_("Archive creation failed, perhaps your disk is running out of space."), _("I/O Error"));
 				close ();
 				return false;
 			}
