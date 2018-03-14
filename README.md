@@ -14,10 +14,11 @@ You'll need some dependencies to build:
 
 And you'll need these to actually run [magic-wormhole](https://github.com/warner/magic-wormhole):
 * build-essential
-* python-pip
-* python-dev
 * libffi-dev
 * libssl-dev
+* python-pip
+* python-dev
+* zip
 
 
 Run these commands to configure the build environment:

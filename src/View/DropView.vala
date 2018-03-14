@@ -15,7 +15,6 @@ public class DropView : Gtk.Box {
 	};
 	private const string DRAG_TEXT = _("Drag files and folders here");
 	private const string DROP_TEXT = _("Drop to send");
-	private const string PREPARE_TEXT = _("Preparing files...");
 
 	private Gtk.Label title;
 
@@ -74,7 +73,6 @@ public class DropView : Gtk.Box {
         var clipboard = Gtk.Clipboard.get_for_display (display, Gdk.SELECTION_CLIPBOARD);
         window.prevScreen();
         window.addScreen (new SendView (window, clipboard));
-		title.label = PREPARE_TEXT;
 
 		var uris = data.get_uris ();
 		try{

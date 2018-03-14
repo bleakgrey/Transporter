@@ -1,7 +1,7 @@
 Source: com.github.bleakgrey.transporter
 Section: x11
 Priority: extra
-Maintainer: Glushchenko Artyom <bleakgrey@gmail.com>
+Maintainer: bleak_grey <bleakgrey@gmail.com>
 Build-Depends: meson,
 			   libgranite-dev,
                debhelper (>= 9),
