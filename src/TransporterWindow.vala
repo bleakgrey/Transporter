@@ -114,6 +114,7 @@ public class TransporterWindow: Gtk.Dialog {
 
 		box.remove (current_screen);
 		screens.resize (screens.length - 1);
+		current_screen.destroy();
 		current_screen = screens[screens.length - 1];
 		box.add (current_screen);
 		current_screen.show ();
