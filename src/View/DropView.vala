@@ -73,6 +73,7 @@ public class DropView : Gtk.Box {
 	    var path = Utils.get_send_path (data.get_uris ());
         var display = window.get_display ();
         var clipboard = Gtk.Clipboard.get_for_display (display, Gdk.SELECTION_CLIPBOARD);
+        window.prevScreen();
         window.addScreen (new SendView (window, clipboard));
         window.wormhole.send (path);
 	}
