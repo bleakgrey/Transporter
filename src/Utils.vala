@@ -1,6 +1,6 @@
 public class Utils{
 
-	private static const string dir = "/tmp/Transporter";
+	private const string dir = "/tmp/Transporter";
 	private static string zip = null;
 
 	public static string get_send_path(string[] uris){
@@ -25,7 +25,7 @@ public class Utils{
 	    else if(uris.length == 1 && dirs == 1)
 	    	return paths[0];
 	    else
-	    	return get_temp_path(paths);
+	    	return get_archive_path(paths);
 	}
 
 	public static bool is_directory(string path){
@@ -43,14 +43,23 @@ public class Utils{
 		return "directory" in stdout;
 	}
 
-	private static string get_temp_path(string[] paths){
+	// magic-wormhole doesn't support multiple file sending or
+	// when directory contains symlinks to other directories.
+	//
+	// That's why we have to create an archive.
+	private static string get_archive_path(string[] paths){
 		info ("Preparing zip file at: "+dir);
 		clean_temp();
 
 		//Create temp folder
 		zip = "Transfer-" + new GLib.DateTime.now_local ().to_unix ().to_string ();
 		var zip_path = "%s/%s".printf(dir, zip);
-		Process.spawn_command_line_sync ("mkdir " + dir);
+		try{
+			Process.spawn_command_line_sync ("mkdir " + dir);
+		}
+		catch(GLib.SpawnError e){
+			warning(e.message);
+		}
 
 		//Create symlinks for each file
 		foreach (string path in paths) {
@@ -76,9 +85,12 @@ public class Utils{
 	}
 
 	public static void clean_temp(){
-		if(dir != null && dir != "/"){
-			info("Cleaning up temporary files");
-			Process.spawn_command_line_async ("rm -rf /tmp/Transporter");
+		info("Cleaning up temporary files");
+		try{
+			Process.spawn_command_line_sync ("rm -rf "+dir);
+		}
+		catch(GLib.SpawnError e){
+			warning(e.message);
 		}
 	}
 

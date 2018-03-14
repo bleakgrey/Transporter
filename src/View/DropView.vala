@@ -15,6 +15,7 @@ public class DropView : Gtk.Box {
 	};
 	private const string DRAG_TEXT = _("Drag files and folders here");
 	private const string DROP_TEXT = _("Drop to send");
+	private const string PREPARE_TEXT = _("Preparing files...");
 
 	private Gtk.Label title;
 
@@ -68,14 +69,31 @@ public class DropView : Gtk.Box {
 
 	private void on_drag_data_received (Gdk.DragContext drag_context, int x, int y, Gtk.SelectionData data, uint info, uint time){
 	    Gtk.drag_finish (drag_context, true, false, time);
-	    title.label = _("One moment...");
 
-	    var path = Utils.get_send_path (data.get_uris ());
-        var display = window.get_display ();
+	    var display = window.get_display ();
         var clipboard = Gtk.Clipboard.get_for_display (display, Gdk.SELECTION_CLIPBOARD);
         window.prevScreen();
         window.addScreen (new SendView (window, clipboard));
-        window.wormhole.send (path);
+		title.label = PREPARE_TEXT;
+
+		var uris = data.get_uris ();
+		try{
+			if(Thread.supported ()){
+	            new Thread<bool>.try ("PackThread", () => {
+	            	var path = Utils.get_send_path (uris);
+	        		wormhole.send (path);
+	                return false;
+	            });
+	        }
+	        else{
+		       	var path = Utils.get_send_path (uris);
+	        	wormhole.send (path);
+	        }
+    	}
+    	catch(Error e){
+    		warning(e.message);
+    		wormhole.errored(e.message, _("Internal Error"), true);
+    	}
 	}
 
 }
