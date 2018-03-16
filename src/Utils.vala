@@ -3,15 +3,13 @@ public class Utils{
 	private const string dir = "/tmp/Transporter";
 	private static string zip = null;
 
-	public static string get_send_path(string[] uris){
+	public static string[] paths = {};
+
+	public static string get_send_path(){
 		int files = 0;
 		int dirs = 0;
-		string[] paths = {};
 
-		foreach (string uri in uris) {
-	    	var path = GLib.Filename.from_uri(uri);
-	    	paths += path;
-
+		foreach (var path in paths) {
 	    	if(is_directory (path))
 	    		dirs++;
 	    	else
@@ -20,9 +18,9 @@ public class Utils{
 
 	    info("Sending %d files and %d directories".printf(files, dirs));
 
-	    if(uris.length == 1 && files == 1)
+	    if(paths.length == 1 && files == 1)
 	    	return paths[0];
-	    else if(uris.length == 1 && dirs == 1)
+	    else if(paths.length == 1 && dirs == 1)
 	    	return paths[0];
 	    else
 	    	return get_archive_path(paths);
