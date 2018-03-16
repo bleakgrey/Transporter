@@ -1,0 +1,6 @@
+[Contractor Entry]
+Name=Transport
+Description=Send files to another computer with Transporter
+Icon=com.github.bleakgrey.transporter
+MimeType=inode;application;audio;video;text;multipart;archive;
+Exec=com.github.bleakgrey.transporter %F
