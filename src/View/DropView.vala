@@ -69,22 +69,33 @@ public class DropView : Gtk.Box {
 	private void on_drag_data_received (Gdk.DragContext drag_context, int x, int y, Gtk.SelectionData data, uint info, uint time){
 	    Gtk.drag_finish (drag_context, true, false, time);
 
+	    string[] paths = {};
+		var uris = data.get_uris ();
+		foreach (var uri in uris) {
+	    	var path = GLib.Filename.from_uri(uri);
+	    	paths += path;
+	    }
+
+	    send(paths);
+	}
+
+	public void send(string[] paths){
 	    var display = window.get_display ();
         var clipboard = Gtk.Clipboard.get_for_display (display, Gdk.SELECTION_CLIPBOARD);
         window.prevScreen();
         window.addScreen (new SendView (window, clipboard));
 
-		var uris = data.get_uris ();
+        Utils.paths = paths;
 		try{
 			if(Thread.supported ()){
 	            new Thread<bool>.try ("PackThread", () => {
-	            	var path = Utils.get_send_path (uris);
+	            	var path = Utils.get_send_path ();
 	        		wormhole.send (path);
 	                return false;
 	            });
 	        }
 	        else{
-		       	var path = Utils.get_send_path (uris);
+		       	var path = Utils.get_send_path ();
 	        	wormhole.send (path);
 	        }
     	}

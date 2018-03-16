@@ -8,13 +8,18 @@ public class Transporter : Granite.Application {
 
 	construct {
 			application_id = "com.github.bleakgrey.transporter";
-			flags = ApplicationFlags.FLAGS_NONE;
+			flags = ApplicationFlags.HANDLES_OPEN;
 			program_name = "Transporter";
 			build_version = "1.2.0";
 	}
 
 	public static int main (string[] args) {
 		Gtk.init (ref args);
+
+        foreach (var arg in args) {
+        	info(arg);
+        }
+
 		instance = new Transporter();
 		return instance.run (args);
 	}
@@ -32,6 +37,23 @@ public class Transporter : Granite.Application {
 
 	protected override void activate () {
 		window.present (); 
+	}
+
+	public override void open (File[] files, string hint) {
+		string[] paths = {};
+        foreach (var file in files) {
+        	var path = file.get_path ();
+        	if(path != null){
+        		info(path);
+        		paths += path;
+        	}
+        }
+
+        activate();
+
+        var view = new DropView(window);
+        window.addScreen(view);
+        view.send(paths);
 	}
 
 }
