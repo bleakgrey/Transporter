@@ -37,6 +37,14 @@
   </screenshots>
 
   <releases>
+      <release version="1.2.1" date="2018-03-16">
+  ​      <description>
+  ​         <ul>
+              <li>Added Contractor support</li>
+              <li>Added Send and Receive actions to desktop entry</li>
+          </ul>
+  ​      </description>
+  ​    </release>
      <release version="1.2.0" date="2018-03-14">
   ​      <description>
   ​         <ul>
