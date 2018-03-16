@@ -10,3 +10,12 @@ Categories=GNOME;GTK;Utility;Network;FileTransfer;
 Keywords=share;files;send;receive;wormhole;transfer;
 MimeType=text/plain;
 StartupNotify=true
+Actions=ShowSend;ShowReceive;
+
+[Desktop Action ShowSend]
+Exec=com.github.bleakgrey.transporter --send
+Name=Send Files
+
+[Desktop Action ShowReceive]
+Exec=com.github.bleakgrey.transporter --receive
+Name=Receive Files
