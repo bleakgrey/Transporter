@@ -4,7 +4,15 @@ using Granite;
 public class Transporter : Granite.Application {
 
 	public static Transporter instance;
+	public static bool open_send = false;
+	public static bool open_receive = false;
 	public TransporterWindow window;
+
+	private const GLib.OptionEntry[] options = {
+			{ "send", 0, 0, OptionArg.NONE, ref open_send, "Open Send view", null },
+			{ "receive", 0, 0, OptionArg.NONE, ref open_receive, "Open Receive view", null },
+			{ null }
+	};
 
 	construct {
 			application_id = "com.github.bleakgrey.transporter";
@@ -15,10 +23,9 @@ public class Transporter : Granite.Application {
 
 	public static int main (string[] args) {
 		Gtk.init (ref args);
-
-        foreach (var arg in args) {
-        	info(arg);
-        }
+		var opt_context = new OptionContext ("- Options");
+		opt_context.add_main_entries (options, null);
+		opt_context.parse (ref args);
 
 		instance = new Transporter();
 		return instance.run (args);
@@ -37,6 +44,11 @@ public class Transporter : Granite.Application {
 
 	protected override void activate () {
 		window.present (); 
+
+		if(open_send)
+			window.addScreen (new DropView (window));
+		else if(open_receive)
+			window.addScreen (new ReceiveView (window));
 	}
 
 	public override void open (File[] files, string hint) {
@@ -51,9 +63,11 @@ public class Transporter : Granite.Application {
 
         activate();
 
-        var view = new DropView(window);
-        window.addScreen(view);
-        view.send(paths);
+        if(paths.length > 0){
+	        var view = new DropView(window);
+	        window.addScreen(view);
+	        view.send(paths);
+	    }
 	}
 
 }
