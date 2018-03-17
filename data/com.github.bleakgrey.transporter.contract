@@ -2,5 +2,5 @@
 Name=Transport
 Description=Send files to another computer with Transporter
 Icon=com.github.bleakgrey.transporter
-MimeType=inode;application;audio;video;text;multipart;archive;
+MimeType=inode;application;audio;video;text;multipart;archive;image;drawing;model;x-world;music;message;example;
 Exec=com.github.bleakgrey.transporter %F
