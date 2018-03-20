@@ -1,4 +1,4 @@
-public class ReceiveView : Gtk.EventBox {
+public class ReceiveView : Gtk.Box {
 
     protected bool is_finished = false;
 
@@ -42,6 +42,7 @@ public class ReceiveView : Gtk.EventBox {
 
         entry = new Gtk.Entry ();
         entry.width_chars = 30;
+        entry.grab_focus ();
         items.add (entry);
 
         add (content);
