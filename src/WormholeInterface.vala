@@ -25,6 +25,7 @@ public class WormholeInterface : Object {
 	public const string ERR_MISMATCHED_ID = "confirmation failed";
 	public const string ERR_RELAY_UNRESPONSIVE = "We had a problem connecting to the relay";
 	public const string ERR_UNREADABLE = "file you wanted to send couldn't be read";
+	public const string ERR_UNREADABLE_WORMHOLE = "Invalid value for \"what\"";
 	public const string ID_GENERATED = "wormhole receive";
 	public const string FINISH_RECEIVE = "written";
 	public const string PERCENT_RECEIVE = "%|";
@@ -216,8 +217,8 @@ public class WormholeInterface : Object {
 				close ();
 				return false;
 			}
-			if(ERR_UNREADABLE in line){
-				errored (_("Please make sure selected files do not contain special characters in their paths and names."), _("I/O Error"));
+			if(ERR_UNREADABLE in line || ERR_UNREADABLE_WORMHOLE in line){
+				errored (_("Some files are unreadable. Please make sure they don't contain special characters in their paths and names."), _("I/O Error"));
 				close ();
 				return false;
 			}
