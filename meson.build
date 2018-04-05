@@ -15,6 +15,8 @@ executable(
     'src/Settings.vala',
     'src/Utils.vala',
     'src/WormholeInterface.vala',
+    'src/View/AbstractView.vala',
+    'src/View/ErrorView.vala',
     'src/View/InstallView.vala',
     'src/View/WelcomeView.vala',
     'src/View/ReceiveView.vala',

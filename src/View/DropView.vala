@@ -1,7 +1,7 @@
 using Gtk;
 using Gdk;
 
-public class DropView : Gtk.Box {
+public class DropView : AbstractView {
 
 	private const string STYLE = """
 	.drop{
@@ -17,9 +17,6 @@ public class DropView : Gtk.Box {
 	private const string DROP_TEXT = _("Drop to send");
 
 	private Gtk.Label title;
-
-    protected TransporterWindow window;
-    protected WormholeInterface wormhole;
 
 	construct {
 		Granite.Widgets.Utils.set_theming_for_screen (
@@ -51,10 +48,7 @@ public class DropView : Gtk.Box {
 	}
 
     public DropView(TransporterWindow window){
-    	this.window = window;
-        this.wormhole = window.wormhole;
-
-        wormhole.closed.connect(() => title.label = DRAG_TEXT);
+    	base (window);
     }
 
     private bool on_drag_motion (DragContext context, int x, int y, uint time){
@@ -82,8 +76,8 @@ public class DropView : Gtk.Box {
 	public void send(string[] paths){
 	    var display = window.get_display ();
         var clipboard = Gtk.Clipboard.get_for_display (display, Gdk.SELECTION_CLIPBOARD);
-        window.prevScreen();
-        window.addScreen (new SendView (window, clipboard));
+        window.back();
+        window.append (new SendView (window, clipboard));
 
         Utils.paths = paths;
 		try{

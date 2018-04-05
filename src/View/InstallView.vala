@@ -10,7 +10,7 @@ public class InstallView : ReceiveView {
         entry.hide ();
 
         wormhole.finished.connect(() => {
-            window.replaceScreen (new WelcomeView (window));
+            window.replace (new WelcomeView (window));
         });
 
         if(Thread.supported ()){

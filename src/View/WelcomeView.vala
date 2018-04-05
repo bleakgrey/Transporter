@@ -1,7 +1,4 @@
-public class WelcomeView : Gtk.Grid {
-
-    protected TransporterWindow window;
-    protected WormholeInterface wormhole;
+public class WelcomeView : AbstractView {
 
     construct {
         var welcome = new Granite.Widgets.Welcome (_("Welcome to Transporter"), _("What would you like to do?"));
@@ -11,10 +8,10 @@ public class WelcomeView : Gtk.Grid {
         welcome.activated.connect ((index) => {
             switch (index) {
                 case 0:
-                    window.addScreen (new DropView (window));
+                    window.append (new DropView (window));
                     break;
                 case 1:
-                    window.addScreen (new ReceiveView (window));
+                    window.append (new ReceiveView (window));
                     break;
                 case 2:
                     try{
@@ -34,8 +31,7 @@ public class WelcomeView : Gtk.Grid {
     }
 
     public WelcomeView(TransporterWindow window){
-        this.window = window;
-        this.wormhole = window.wormhole;
+        base (window);
     }
 
 }

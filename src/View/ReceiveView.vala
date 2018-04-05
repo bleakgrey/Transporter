@@ -1,9 +1,6 @@
-public class ReceiveView : Gtk.Box {
+public class ReceiveView : AbstractView {
 
     protected bool is_finished = false;
-
-    protected TransporterWindow window;
-    protected WormholeInterface wormhole;
 
     protected Gtk.Label title_label;
     protected Gtk.Label subtitle_label;
@@ -50,12 +47,10 @@ public class ReceiveView : Gtk.Box {
     }
 
     public ReceiveView(TransporterWindow window){
-        this.window = window;
-        this.wormhole = window.wormhole;
-        this.setup ();
+        base (window);
     }
 
-    protected virtual void setup(){
+    protected override void setup(){
         entry.set_icon_from_icon_name (Gtk.EntryIconPosition.SECONDARY, "edit-clear");
         entry.icon_press.connect ((pos, event) => {
             if (pos == Gtk.EntryIconPosition.SECONDARY)

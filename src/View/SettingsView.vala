@@ -1,4 +1,4 @@
-public class SettingsView : Gtk.Grid {
+public class SettingsView : AbstractView {
 
     construct {
         var settings = TransporterSettings.get_default();
@@ -23,7 +23,9 @@ public class SettingsView : Gtk.Grid {
         show_all ();
     }
 
-    public SettingsView(){}
+    public SettingsView(TransporterWindow window){
+        base (window);
+    }
 
     protected class SettingsLabel : Gtk.Label {
         public SettingsLabel (string text) {

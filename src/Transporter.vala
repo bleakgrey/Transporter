@@ -46,9 +46,9 @@ public class Transporter : Granite.Application {
 		window.present (); 
 
 		if(open_send)
-			window.addScreen (new DropView (window));
+			window.append (new DropView (window));
 		else if(open_receive)
-			window.addScreen (new ReceiveView (window));
+			window.append (new ReceiveView (window));
 	}
 
 	public override void open (File[] files, string hint) {
@@ -65,7 +65,7 @@ public class Transporter : Granite.Application {
 
         if(paths.length > 0){
 	        var view = new DropView(window);
-	        window.addScreen(view);
+	        window.append(view);
 	        view.send(paths);
 	    }
 	}
