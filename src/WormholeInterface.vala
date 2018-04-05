@@ -15,7 +15,7 @@ public class WormholeInterface : Object {
 	public string home_path = null;
 	public string wormhole_path = null;
 	public string downloads_path = null;
-	public const string[] WORMHOLE_LOCATIONS = {"/bin/wormhole", "/usr/sbin/wormhole", "~/.local/bin/wormhole"};
+	public const string[] WORMHOLE_LOCATIONS = {"/bin/wormhole", "/usr/bin/wormhole", "/usr/sbin/wormhole", "~/.local/bin/wormhole"};
 
 	public const string ERR_INVALID_ID = "reenter the key";
 	public const string ERR_CROWDED = "crowded";
