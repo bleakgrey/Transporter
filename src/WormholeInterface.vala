@@ -30,13 +30,13 @@ public class WormholeInterface : Object {
     public const string FINISH_RECEIVE = "written";
     public const string PERCENT_RECEIVE = "%|";
 
-    construct{
+    construct {
         home_path = GLib.Environment.get_home_dir ();
         downloads_path = GLib.Environment.get_user_special_dir (UserDirectory.DOWNLOAD);
         settings = TransporterSettings.get_default();
     }
 
-    public bool bin_present(){
+    public bool bin_present() {
         var found = false;
 
         foreach (var path in WORMHOLE_LOCATIONS) {
@@ -51,7 +51,7 @@ public class WormholeInterface : Object {
             catch (SpawnError e){}
         }
 
-        if(!found)
+        if (!found)
             info ("Can't find magic-wormhole");
 
         return found;
@@ -59,31 +59,31 @@ public class WormholeInterface : Object {
 
     public bool install(){
         started ();
-        try{
+        try {
             Process.spawn_command_line_sync ("pip install --user --no-input magic-wormhole");
         }
-        catch (GLib.SpawnError e){
-            warning(e.message);
-            errored(e.message, _("Installation Error"), true);
+        catch (GLib.SpawnError e) {
+            warning (e.message);
+            errored (e.message, _("Installation Error"), true);
             return false;
         }
         closed ();
 
         var found = bin_present ();
         if(!found)
-            errored(_("Couldn't install magic-wormhole automatically."), _("Installation Error"), true);
+            errored (_("Couldn't install magic-wormhole automatically."), _("Installation Error"), true);
         else
             finished ();
 
         return found;
     }
 
-    public bool is_running(){
+    public bool is_running() {
         return pid > 0;
     }
 
-    public void close(){
-            if(!is_running ()) return;
+    public void close() {
+            if (!is_running ()) return;
             try {
                 info ("Closing wormhole with PID "+ pid.to_string ());
                 Process.spawn_command_line_sync ("kill " + pid.to_string ());
@@ -100,7 +100,7 @@ public class WormholeInterface : Object {
         int standard_err;
         int standard_out;
 
-        info("Opening wormhole");
+        info ("Opening wormhole");
         started ();
 
         try{
@@ -124,9 +124,9 @@ public class WormholeInterface : Object {
                 return process_line (channel, condition);
             });
         }
-        catch(GLib.SpawnError e){
-            errored(e.message);
-            closed();
+        catch (GLib.SpawnError e) {
+            errored (e.message);
+            closed ();
         }
 
     }
@@ -135,13 +135,13 @@ public class WormholeInterface : Object {
         string[] args = {wormhole_path.replace ("~", home_path)};
 
         var relay = settings.server_relay;
-        if(relay != null){
+        if (relay != null) {
             args += "--relay-url";
             args += relay;
         }
 
         var transit = settings.server_transit;
-        if(transit != null){
+        if (transit != null) {
             args += "--transit-helper";
             args += transit;
         }
@@ -149,38 +149,38 @@ public class WormholeInterface : Object {
         return args;
     }
 
-    public void send(string file){
-        string[] args = get_launch_args();
+    public void send(string file) {
+        string[] args = get_launch_args ();
         args += "send";
         args += file;
 
         var words = settings.words;
-        if(words > -1){
+        if (words > -1) {
             args += "--code-length";
-            args += words.to_string();
+            args += words.to_string ();
         }
         open (args, home_path);
     }
-    public void receive(string id){
-        string[] args = get_launch_args();
+    public void receive(string id) {
+        string[] args = get_launch_args ();
         args += "receive";
         args += "--accept-file";
         args += id;
         open (args, downloads_path);
     }
 
-    public void ding(){
-        if(settings.ding){
-            try{
+    public void ding() {
+        if (settings.ding) {
+            try {
                 Process.spawn_command_line_async ("paplay /usr/share/sounds/freedesktop/stereo/complete.oga");
             }
-            catch (GLib.SpawnError e){}
+            catch (GLib.SpawnError e) {}
         }
     }
 
     private bool process_line (IOChannel channel, IOCondition condition) {
-        if(condition == IOCondition.HUP){
-            if(is_running ()){
+        if (condition == IOCondition.HUP) {
+            if (is_running ()) {
                 debug (">>STREAM END<<");
                 close ();
             }
@@ -192,52 +192,52 @@ public class WormholeInterface : Object {
             channel.read_line (out line, null, null);
             debug ("%s> %s", condition.to_string(), line);
 
-            if(ERR_INVALID_ID in line || ERR_MISMATCHED_ID in line){
+            if (ERR_INVALID_ID in line || ERR_MISMATCHED_ID in line) {
                 errored (_("Please verify your ID and try again."), _("Invalid ID"));
                 close ();
                 return false;
             }
-            if(ERR_CROWDED in line){
+            if (ERR_CROWDED in line) {
                 errored (_("Server is crowded at the moment. "), _("Server Error"));
                 close ();
                 return false;
             }
-            if(ERR_ALREADY_EXISTS in line){
+            if (ERR_ALREADY_EXISTS in line) {
                 errored (_("Received file already exists in Downloads folder."), _("I/O Error"));
                 close ();
                 return false;
             }
-            if(ERR_ALREADY_EXISTS in line){
+            if (ERR_ALREADY_EXISTS in line) {
                 errored (_("Received file already exists in Downloads folder."), _("I/O Error"));
                 close ();
                 return false;
             }
-            if(ERR_RELAY_UNRESPONSIVE in line){
+            if (ERR_RELAY_UNRESPONSIVE in line) {
                 errored (_("Relay server unresponsive."), _("Server Error"));
                 close ();
                 return false;
             }
-            if(ERR_UNREADABLE in line || ERR_UNREADABLE_WORMHOLE in line){
+            if (ERR_UNREADABLE in line || ERR_UNREADABLE_WORMHOLE in line) {
                 errored (_("Some files are unreadable. Please make sure they don't contain special characters in their paths and names."), _("I/O Error"));
                 close ();
                 return false;
             }
-            if(ERR_NOT_FOUND in line){
+            if (ERR_NOT_FOUND in line) {
                 errored (_("Archive creation failed, perhaps your disk is running out of space."), _("I/O Error"));
                 close ();
                 return false;
             }
 
-            if(PERCENT_RECEIVE in line){
+            if (PERCENT_RECEIVE in line) {
                 var percent = line.split ("%", 2) [0];
                 progress (int.parse (percent));
             }
-            if(ID_GENERATED in line){
+            if (ID_GENERATED in line) {
                 var id = line.split (" ", 3)[2];
                 code_generated (id.strip ().replace ("\n",""));
                 return false;
             }
-            if(FINISH_RECEIVE in line){
+            if (FINISH_RECEIVE in line) {
                 finished ();
                 close ();
             }

@@ -23,7 +23,7 @@ public class Utils{
         else if(paths.length == 1 && dirs == 1)
             return paths[0];
         else
-            return get_archive_path(paths);
+            return get_archive_path (paths);
     }
 
     public static bool is_directory(string path){
@@ -53,16 +53,16 @@ public class Utils{
     // That's why we have to create an archive.
     private static string get_archive_path(string[] paths){
         info ("Preparing zip file at: "+dir);
-        clean_temp();
+        clean_temp ();
 
         //Create temp folder
         zip = "Transfer-" + new GLib.DateTime.now_local ().to_unix ().to_string ();
-        var zip_path = "%s/%s".printf(dir, zip);
+        var zip_path = "%s/%s".printf (dir, zip);
         try{
             Process.spawn_command_line_sync ("mkdir " + dir);
         }
         catch(GLib.SpawnError e){
-            warning(e.message);
+            warning (e.message);
         }
 
         //Create symlinks for each file
@@ -75,7 +75,7 @@ public class Utils{
                     SpawnFlags.SEARCH_PATH, null, null, null, null);
             }
             catch(GLib.SpawnError e){
-                warning(e.message);
+                warning (e.message);
             }
         }
 
@@ -92,19 +92,19 @@ public class Utils{
                 null);
         }
         catch(GLib.SpawnError e){
-            warning(e.message);
+            warning (e.message);
         }
 
         return zip_path+".zip";
     }
 
     public static void clean_temp(){
-        info("Cleaning up temporary files");
+        info ("Cleaning up temporary files");
         try{
             Process.spawn_command_line_sync ("rm -rf "+dir);
         }
         catch(GLib.SpawnError e){
-            warning(e.message);
+            warning (e.message);
         }
     }
 

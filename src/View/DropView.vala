@@ -30,7 +30,7 @@ public class DropView : AbstractView {
         var drop = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         drop.hexpand = true;
         drop.vexpand = true;
-        drop.get_style_context().add_class("drop");
+        drop.get_style_context ().add_class ("drop");
 
         title = new Gtk.Label (DRAG_TEXT);
         title.get_style_context ().add_class ("h2");
@@ -75,13 +75,13 @@ public class DropView : AbstractView {
             }
         }
 
-        send(paths);
+        send (paths);
     }
 
     public void send(string[] paths){
         var display = window.get_display ();
         var clipboard = Gtk.Clipboard.get_for_display (display, Gdk.SELECTION_CLIPBOARD);
-        window.back();
+        window.back ();
         window.append (new SendView (window, clipboard));
 
         Utils.paths = paths;
@@ -99,8 +99,8 @@ public class DropView : AbstractView {
             }
         }
         catch(Error e){
-            warning(e.message);
-            wormhole.errored(e.message, _("Internal Error"), true);
+            warning (e.message);
+            wormhole.errored (e.message, _("Internal Error"), true);
         }
     }
 
