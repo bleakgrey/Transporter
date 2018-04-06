@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.bleakgrey.transporter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-14 16:26+0300\n"
+"POT-Creation-Date: 2018-04-06 16:49+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/TransporterWindow.vala:51
+#: src/TransporterWindow.vala:53
 msgid "Back"
 msgstr ""
 
-#: src/TransporterWindow.vala:56
+#: src/TransporterWindow.vala:58
 msgid "Settings"
 msgstr ""
 
-#: src/TransporterWindow.vala:90
+#: src/TransporterWindow.vala:81
 msgid "Are you sure you want to cancel transaction?"
 msgstr ""
 
@@ -33,50 +33,50 @@ msgstr ""
 msgid "Error"
 msgstr ""
 
-#: src/WormholeInterface.vala:66 src/WormholeInterface.vala:73
+#: src/WormholeInterface.vala:67 src/WormholeInterface.vala:74
 msgid "Installation Error"
 msgstr ""
 
-#: src/WormholeInterface.vala:73
+#: src/WormholeInterface.vala:74
 msgid "Couldn't install magic-wormhole automatically."
 msgstr ""
 
-#: src/WormholeInterface.vala:195
+#: src/WormholeInterface.vala:196
 msgid "Please verify your ID and try again."
 msgstr ""
 
-#: src/WormholeInterface.vala:195
+#: src/WormholeInterface.vala:196
 msgid "Invalid ID"
 msgstr ""
 
-#: src/WormholeInterface.vala:200
+#: src/WormholeInterface.vala:201
 msgid "Server is crowded at the moment. "
 msgstr ""
 
-#: src/WormholeInterface.vala:200 src/WormholeInterface.vala:215
+#: src/WormholeInterface.vala:201 src/WormholeInterface.vala:216
 msgid "Server Error"
 msgstr ""
 
-#: src/WormholeInterface.vala:205 src/WormholeInterface.vala:210
+#: src/WormholeInterface.vala:206 src/WormholeInterface.vala:211
 msgid "Received file already exists in Downloads folder."
 msgstr ""
 
-#: src/WormholeInterface.vala:205 src/WormholeInterface.vala:210
-#: src/WormholeInterface.vala:220 src/WormholeInterface.vala:225
+#: src/WormholeInterface.vala:206 src/WormholeInterface.vala:211
+#: src/WormholeInterface.vala:221 src/WormholeInterface.vala:226
 msgid "I/O Error"
 msgstr ""
 
-#: src/WormholeInterface.vala:215
+#: src/WormholeInterface.vala:216
 msgid "Relay server unresponsive."
 msgstr ""
 
-#: src/WormholeInterface.vala:220
+#: src/WormholeInterface.vala:221
 msgid ""
-"Please make sure selected files do not contain special characters in their "
-"paths and names."
+"Some files are unreadable. Please make sure they don't contain special "
+"characters in their paths and names."
 msgstr ""
 
-#: src/WormholeInterface.vala:225
+#: src/WormholeInterface.vala:226
 msgid "Archive creation failed, perhaps your disk is running out of space."
 msgstr ""
 
@@ -88,31 +88,31 @@ msgstr ""
 msgid "Installing magic-wormhole"
 msgstr ""
 
-#: src/View/ReceiveView.vala:13
+#: src/View/ReceiveView.vala:10
 msgid "Enter Transfer ID"
 msgstr ""
 
-#: src/View/ReceiveView.vala:18
+#: src/View/ReceiveView.vala:15
 msgid "Ask the sender to share it"
 msgstr ""
 
-#: src/View/ReceiveView.vala:77 src/View/SendView.vala:33
+#: src/View/ReceiveView.vala:73 src/View/SendView.vala:34
 msgid "Transfer Complete"
 msgstr ""
 
-#: src/View/ReceiveView.vala:78
+#: src/View/ReceiveView.vala:74
 msgid "Saved in your Downloads folder"
 msgstr ""
 
-#: src/View/ReceiveView.vala:84
+#: src/View/ReceiveView.vala:80
 msgid "Connection closed unexpectedly."
 msgstr ""
 
-#: src/View/ReceiveView.vala:87
+#: src/View/ReceiveView.vala:83
 msgid "Transferring: "
 msgstr ""
 
-#: src/View/ReceiveView.vala:88
+#: src/View/ReceiveView.vala:84
 msgid "Please wait a moment"
 msgstr ""
 
@@ -132,39 +132,39 @@ msgstr ""
 msgid "Share it with the recipient"
 msgstr ""
 
-#: src/View/SendView.vala:34
+#: src/View/SendView.vala:35
 msgid "Connection has been closed"
 msgstr ""
 
-#: src/View/WelcomeView.vala:7
+#: src/View/WelcomeView.vala:4
 msgid "Welcome to Transporter"
 msgstr ""
 
-#: src/View/WelcomeView.vala:7
+#: src/View/WelcomeView.vala:4
 msgid "What would you like to do?"
 msgstr ""
 
-#: src/View/WelcomeView.vala:8
+#: src/View/WelcomeView.vala:5
 msgid "Send Files"
 msgstr ""
 
-#: src/View/WelcomeView.vala:8
+#: src/View/WelcomeView.vala:5
 msgid "Upload data to another computer"
 msgstr ""
 
-#: src/View/WelcomeView.vala:9
+#: src/View/WelcomeView.vala:6
 msgid "Receive Files"
 msgstr ""
 
-#: src/View/WelcomeView.vala:9
+#: src/View/WelcomeView.vala:6
 msgid "Download data from another computer"
 msgstr ""
 
-#: src/View/WelcomeView.vala:10
+#: src/View/WelcomeView.vala:7
 msgid "Show Downloads"
 msgstr ""
 
-#: src/View/WelcomeView.vala:10
+#: src/View/WelcomeView.vala:7
 msgid "Open your Downloads folder"
 msgstr ""
 
@@ -200,6 +200,6 @@ msgstr ""
 msgid "Drop to send"
 msgstr ""
 
-#: src/View/DropView.vala:93
+#: src/View/DropView.vala:98
 msgid "Internal Error"
 msgstr ""
