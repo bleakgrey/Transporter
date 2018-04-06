@@ -1,8 +1,8 @@
 public class InstallView : ReceiveView {
 
-	public InstallView(TransporterWindow window){
-		base (window);
-	}
+    public InstallView(TransporterWindow window){
+        base (window);
+    }
 
     protected override void setup(){
         title_label.set_text (_("Preparing Transporter"));
@@ -13,14 +13,18 @@ public class InstallView : ReceiveView {
             window.replace (new WelcomeView (window));
         });
 
-        if(Thread.supported ()){
-            new Thread<bool>.try ("InstallThread", () => {
+        try{
+            if(Thread.supported ())
+                new Thread<bool>.try ("InstallThread", () => {
+                    wormhole.install ();
+                    return false;
+                });
+            else
                 wormhole.install ();
-                return false;
-            });
         }
-        else
-            wormhole.install ();
+        catch(GLib.Error e){
+            warning (e.message);
+        }
     }
 
 }

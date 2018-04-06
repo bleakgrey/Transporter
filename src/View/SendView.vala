@@ -2,10 +2,10 @@ public class SendView : ReceiveView {
 
     protected Gtk.Clipboard clipboard;
 
-	public SendView(TransporterWindow window, Gtk.Clipboard clipboard){
-		base (window);
+    public SendView(TransporterWindow window, Gtk.Clipboard clipboard){
+        base (window);
         this.clipboard = clipboard;
-	}
+    }
 
     protected override void setup(){
         title_label.set_text (_("Starting Transfer..."));
