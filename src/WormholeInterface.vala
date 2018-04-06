@@ -47,6 +47,7 @@ public class WormholeInterface : Object {
                 found = true;
                 wormhole_path = path;
                 info ("Found magic-wormhole at: "+wormhole_path);
+                break;
             }
             catch (SpawnError e){}
         }
