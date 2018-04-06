@@ -26,6 +26,7 @@ public class SendView : ReceiveView {
             entry.show ();
             entry.set_sensitive (true);
             entry.set_text (id);
+            entry.grab_focus ();
         });
 
         wormhole.closed.connect(() => {
