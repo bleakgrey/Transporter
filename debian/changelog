@@ -1,6 +1,8 @@
-transporter (1.2.1) xenial; urgency=low
+transporter (1.2.2) xenial; urgency=low
 
-  * Added Contractor support
-  * Added Send and Receive actions to desktop entry
+  * Fixed Contractor support for certain files
+  * Improved searching for magic-wormhole binary
+  * Improved performance and error handling
+  * ID entries are now automatically focused
 
  -- bleak_grey <bleakgrey@gmail.com>  Tue, 27 Feb 2018 10:00:00 -0500
