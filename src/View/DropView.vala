@@ -3,13 +3,6 @@ using Gdk;
 
 public class DropView : AbstractView {
 
-    private const string STYLE = """
-    .drop{
-        border: 2px dashed rgba(0,0,0,.25);
-        border-radius: 5px;
-        padding: 32px;
-    }
-    """;
     private const Gtk.TargetEntry[] targets = {
           {"text/uri-list",0,0}
     };
@@ -19,12 +12,6 @@ public class DropView : AbstractView {
     private Gtk.Label title;
 
     construct {
-        Granite.Widgets.Utils.set_theming_for_screen (
-            get_screen(),
-            STYLE,
-            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-        );
-
         border_width = 10;
 
         var drop = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);

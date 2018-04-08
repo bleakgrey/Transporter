@@ -11,6 +11,15 @@ public class TransporterWindow: Gtk.Dialog {
 
     public WormholeInterface wormhole;
 
+    private const string STYLE = """
+    @define-color colorAccent #7a36b1;
+    .drop{
+        border: 2px dashed rgba(0,0,0,.25);
+        border-radius: 5px;
+        padding: 32px;
+    }
+    """;
+
     public TransporterWindow (Gtk.Application application) {
          Object (application: application,
          icon_name: "com.github.bleakgrey.transporter",
@@ -41,6 +50,12 @@ public class TransporterWindow: Gtk.Dialog {
         get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
         get_content_area ().set_size_request (400, 400);
 
+        Granite.Widgets.Utils.set_theming_for_screen (
+            get_screen(),
+            STYLE,
+            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+        );
+
         stack = new Stack();
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         stack.show ();
@@ -60,7 +75,7 @@ public class TransporterWindow: Gtk.Dialog {
         settings_button.tooltip_text = _("Settings");
         settings_button.image = new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
         settings_button.clicked.connect (() => {
-            if (settings_button.sensitive)    
+            if (settings_button.sensitive)
                 append (new SettingsView (this));
         });
 
@@ -78,14 +93,14 @@ public class TransporterWindow: Gtk.Dialog {
     private void update_header(){
         var back_visible = !(current_screen is WelcomeView) && stack.get_children ().length() > 1;
         update_header_widget (back_button, back_visible);
-        
+
         var settings_visible = !(current_screen is SettingsView);
         update_header_widget (settings_button, settings_visible);
-        
+
         settings_button.visible = !(current_screen is SettingsView || current_screen is InstallView || wormhole.is_running ());
         spinner.visible = (current_screen is InstallView || wormhole.is_running ());
     }
-    
+
     private void update_header_widget(Widget widget, bool visible){
         if (visible) {
             widget.opacity = 1;
