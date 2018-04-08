@@ -9,7 +9,9 @@ public class InstallView : ReceiveView {
         subtitle_label.set_text (_("Installing magic-wormhole"));
         entry.hide ();
 
-        wormhole.finished.connect(() => Timeout.add (1000, replace));
+        wormhole.finished.connect(() => {
+            window.replace (new WelcomeView (window));
+        });
 
         try{
             if(Thread.supported ())
@@ -23,12 +25,6 @@ public class InstallView : ReceiveView {
         catch(GLib.Error e){
             warning (e.message);
         }
-    }
-
-    public bool replace(){
-        wormhole.ding ();
-        window.replace (new WelcomeView (window));
-        return false;
     }
 
 }

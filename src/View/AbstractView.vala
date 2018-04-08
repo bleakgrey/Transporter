@@ -2,7 +2,7 @@ using Gtk;
 
 public abstract class AbstractView : Gtk.Grid {
 
-    public AbstractView? previous_child;
+    public AbstractView? previous_child = null;
 
     protected TransporterWindow window;
     protected WormholeInterface wormhole;

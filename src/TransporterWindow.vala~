@@ -7,7 +7,7 @@ public class TransporterWindow: Gtk.Dialog {
     Button settings_button;
     Spinner spinner;
     Stack stack;
-    AbstractView? current_screen = null;
+    AbstractView current_screen = null;
 
     public WormholeInterface wormhole;
 
@@ -37,7 +37,7 @@ public class TransporterWindow: Gtk.Dialog {
             append (new WelcomeView (this));
         else
             append (new InstallView (this));
-    }
+    } 
 
     construct{
         get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
@@ -100,20 +100,15 @@ public class TransporterWindow: Gtk.Dialog {
 
     public void append(AbstractView screen){
         screen.previous_child = current_screen;
-        stack.add (screen);
-        stack.set_visible_child (screen);
         current_screen = screen;
+        stack.add (current_screen);
+        stack.set_visible_child (current_screen);
 
         update_header ();
     }
 
     private void pop(){
-        if(current_screen.previous_child == null){
-            stack.remove (current_screen);
-            current_screen.destroy ();
-            current_screen = null;
-            return;
-        };
+        if(current_screen.previous_child == null) return;
 
         stack.set_visible_child (current_screen.previous_child);
         stack.remove (current_screen);

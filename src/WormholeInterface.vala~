@@ -58,7 +58,7 @@ public class WormholeInterface : Object {
         return found;
     }
 
-    public bool install() {
+    public bool install(){
         started ();
         try {
             Process.spawn_command_line_sync ("pip install --user --no-input magic-wormhole");
@@ -76,7 +76,7 @@ public class WormholeInterface : Object {
         else
             finished ();
 
-        return false;
+        return found;
     }
 
     public bool is_running() {
@@ -92,10 +92,10 @@ public class WormholeInterface : Object {
                 closed ();
             } catch (SpawnError e) {
                 warning ("Can't close wormhole: %s\n", e.message);
-            }
+            }       
     }
 
-    private void open(string[] argv, string work_dir) {
+    private void open(string[] argv, string work_dir){
         if (is_running ()) return;
 
         int standard_err;
@@ -132,7 +132,7 @@ public class WormholeInterface : Object {
 
     }
 
-    private string[] get_launch_args() {
+    private string[] get_launch_args(){
         string[] args = {wormhole_path.replace ("~", home_path)};
 
         var relay = settings.server_relay;
