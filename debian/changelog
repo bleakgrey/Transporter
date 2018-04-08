@@ -1,8 +1,9 @@
-transporter (1.2.2) xenial; urgency=low
+transporter (1.3.0) xenial; urgency=low
 
-  * Fixed Contractor support for certain files
-  * Improved searching for magic-wormhole binary
-  * Improved performance and error handling
-  * ID entries are now automatically focused
+  * Added purple accent color
+  * Added ding after wormhole installation
+  * Changed headerbar style
+  * Fixed inconsistent window size
+  * Fixed a potential crash after wormhole installation
 
  -- bleak_grey <bleakgrey@gmail.com>  Tue, 27 Feb 2018 10:00:00 -0500
