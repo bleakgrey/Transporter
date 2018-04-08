@@ -102,7 +102,6 @@ public class WormholeInterface : Object {
         int standard_out;
 
         info ("Opening wormhole");
-        started ();
 
         try{
             Process.spawn_async_with_pipes (
@@ -115,6 +114,7 @@ public class WormholeInterface : Object {
                 null,
                 out standard_out,
                 out standard_err);
+            started ();
 
             var channel_out = new IOChannel.unix_new (standard_out);
             channel_out.add_watch (IOCondition.IN | IOCondition.HUP, (channel, condition) => {

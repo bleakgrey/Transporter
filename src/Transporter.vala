@@ -49,7 +49,7 @@ public class Transporter : Granite.Application {
     }
 
     protected override void activate () {
-        window.present (); 
+        window.present ();
 
         if (open_send)
             window.append (new DropView (window));

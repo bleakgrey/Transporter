@@ -21,12 +21,10 @@ public class TransporterWindow: Gtk.Dialog {
         this.window_position = WindowPosition.CENTER;
         this.set_titlebar (headerbar);
 
-        wormhole.started.connect (() => spinner.show ());
-        wormhole.closed.connect (() => spinner.hide ());
+        wormhole.started.connect (() => update_header ());
+        wormhole.closed.connect (() => update_header ());
         wormhole.errored.connect ((err, title, critical) => {
-            spinner.hide ();
             var view = new ErrorView (this, title, err);
-
             if(critical)
                 replace (view);
             else
@@ -52,27 +50,51 @@ public class TransporterWindow: Gtk.Dialog {
 
         back_button = new Button.with_label (_("Back"));
         back_button.get_style_context ().add_class (Granite.STYLE_CLASS_BACK_BUTTON);
-        back_button.clicked.connect (() => back ());
+        back_button.clicked.connect (() => {
+            if (back_button.sensitive)
+                back ();
+        });
+        back_button.show ();
 
         settings_button = new Button ();
         settings_button.tooltip_text = _("Settings");
-        settings_button.image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR);
-        settings_button.clicked.connect (() => append (new SettingsView (this)));
+        settings_button.image = new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+        settings_button.clicked.connect (() => {
+            if (settings_button.sensitive)    
+                append (new SettingsView (this));
+        });
 
         headerbar = new HeaderBar ();
         headerbar.set_show_close_button (true);
         headerbar.title = "Transporter";
+        headerbar.pack_start (back_button);
         headerbar.pack_end (settings_button);
         headerbar.pack_end (spinner);
-        headerbar.pack_start (back_button);
         headerbar.show ();
 
         get_content_area ().add (stack);
     }
 
     private void update_header(){
-        back_button.visible = !(current_screen is WelcomeView) && stack.get_children ().length() > 1;
-        settings_button.visible = current_screen is WelcomeView;
+        var back_visible = !(current_screen is WelcomeView) && stack.get_children ().length() > 1;
+        update_header_widget (back_button, back_visible);
+        
+        var settings_visible = !(current_screen is SettingsView);
+        update_header_widget (settings_button, settings_visible);
+        
+        settings_button.visible = !(current_screen is SettingsView || current_screen is InstallView || wormhole.is_running ());
+        spinner.visible = (current_screen is InstallView || wormhole.is_running ());
+    }
+    
+    private void update_header_widget(Widget widget, bool visible){
+        if (visible) {
+            widget.opacity = 1;
+            widget.sensitive = true;
+        }
+        else {
+            widget.opacity = 0;
+            widget.sensitive = false;
+        }
     }
 
     public void back(){
