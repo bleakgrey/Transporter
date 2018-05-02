@@ -30,3 +30,13 @@ Finally, install and execute with:
 
     sudo ninja install
     com.github.bleakgrey.transporter
+
+## Contributing
+
+If you feel like contributing, you're always welcome to help the project in many ways:
+* Reporting any issues
+* Suggesting ideas and functionality
+* Submitting pull requests
+* Donating with [LiberaPay](https://liberapay.com/bleakgrey/) to help project development and keeping the developer happy
+
+<a href="https://liberapay.com/bleakgrey/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
