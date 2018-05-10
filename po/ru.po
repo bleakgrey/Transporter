@@ -39,7 +39,6 @@ msgid "Installation Error"
 msgstr "Ошибка Установки"
 
 #: src/WormholeInterface.vala:74
-#, fuzzy
 msgid "Couldn't install magic-wormhole automatically."
 msgstr "Не получилось установить magic-wormhole."
 
@@ -60,13 +59,11 @@ msgid "Server Error"
 msgstr "Ошибка Сервера"
 
 #: src/WormholeInterface.vala:207 src/WormholeInterface.vala:212
-#, fuzzy
 msgid "Received file already exists in Downloads folder."
 msgstr "Получаемый файл уже существует в папке Загрузок."
 
 #: src/WormholeInterface.vala:207 src/WormholeInterface.vala:212
 #: src/WormholeInterface.vala:222 src/WormholeInterface.vala:227
-#, fuzzy
 msgid "I/O Error"
 msgstr "Файловая Ошибка"
 
@@ -75,7 +72,6 @@ msgid "Relay server unresponsive."
 msgstr "Сервер-ретранслятор не отвечает."
 
 #: src/WormholeInterface.vala:222
-#, fuzzy
 msgid ""
 "Some files are unreadable. Please make sure they don't contain special "
 "characters in their paths and names."
@@ -179,17 +175,14 @@ msgid "Open your Downloads folder"
 msgstr "Открыть вашу папку Загрузок"
 
 #: src/View/SettingsView.vala:9
-#, fuzzy
 msgid "Servers"
 msgstr "Серверы"
 
 #: src/View/SettingsView.vala:10
-#, fuzzy
 msgid "Relay:"
 msgstr "Ретранслятор:"
 
 #: src/View/SettingsView.vala:12
-#, fuzzy
 msgid "Transit:"
 msgstr "Передатчик:"
 
@@ -198,17 +191,14 @@ msgid "Miscellaneous"
 msgstr "Разное"
 
 #: src/View/SettingsView.vala:16
-#, fuzzy
 msgid "Downloads:"
 msgstr "Загрузки:"
 
 #: src/View/SettingsView.vala:18
-#, fuzzy
 msgid "ID Length:"
 msgstr "Слов в ID:"
 
 #: src/View/SettingsView.vala:22
-#, fuzzy
 msgid "Sounds:"
 msgstr "Звуки:"
 
@@ -233,6 +223,5 @@ msgid "Drop to send"
 msgstr "Отпустите для отправки"
 
 #: src/View/DropView.vala:90
-#, fuzzy
 msgid "Internal Error"
 msgstr "Ошибка"
