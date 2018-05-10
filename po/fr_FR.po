@@ -28,7 +28,7 @@ msgstr "Paramètres"
 
 #: src/TransporterWindow.vala:81
 msgid "Are you sure you want to cancel transaction?"
-msgstr "Voulez vous annuler le transfert ?"
+msgstr "Voulez vous annuler le transfert?"
 
 #: src/WormholeInterface.vala:8
 msgid "Error"
@@ -147,7 +147,7 @@ msgstr "Bienvenue sur Transporter"
 
 #: src/View/WelcomeView.vala:4
 msgid "What would you like to do?"
-msgstr "Que souhaitez-vous faire ?"
+msgstr "Que souhaitez-vous faire?"
 
 #: src/View/WelcomeView.vala:5
 msgid "Send Files"
