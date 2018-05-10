@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.bleakgrey.transporter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-06 16:49+0300\n"
+"POT-Creation-Date: 2018-05-10 16:05+0300\n"
 "PO-Revision-Date: 2018-02-28 15:36+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,15 +18,15 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: src/TransporterWindow.vala:53
+#: src/TransporterWindow.vala:66
 msgid "Back"
 msgstr "Назад"
 
-#: src/TransporterWindow.vala:58
+#: src/TransporterWindow.vala:75
 msgid "Settings"
 msgstr "Настройки"
 
-#: src/TransporterWindow.vala:81
+#: src/TransporterWindow.vala:118
 msgid "Are you sure you want to cancel transaction?"
 msgstr "Вы уверены, что хотите отменить передачу?"
 
@@ -41,40 +41,40 @@ msgstr "Ошибка Установки"
 #: src/WormholeInterface.vala:74
 #, fuzzy
 msgid "Couldn't install magic-wormhole automatically."
-msgstr "Установить magic-wormhole автоматически не получилось."
+msgstr "Не получилось установить magic-wormhole."
 
-#: src/WormholeInterface.vala:196
+#: src/WormholeInterface.vala:197
 msgid "Please verify your ID and try again."
 msgstr "Пожалуйста, проверьте написание ID и попробуйте снова."
 
-#: src/WormholeInterface.vala:196
+#: src/WormholeInterface.vala:197
 msgid "Invalid ID"
 msgstr "Неправильный ID"
 
-#: src/WormholeInterface.vala:201
+#: src/WormholeInterface.vala:202
 msgid "Server is crowded at the moment. "
 msgstr "Сервер на данный момент перегружен."
 
-#: src/WormholeInterface.vala:201 src/WormholeInterface.vala:216
+#: src/WormholeInterface.vala:202 src/WormholeInterface.vala:217
 msgid "Server Error"
 msgstr "Ошибка Сервера"
 
-#: src/WormholeInterface.vala:206 src/WormholeInterface.vala:211
+#: src/WormholeInterface.vala:207 src/WormholeInterface.vala:212
 #, fuzzy
 msgid "Received file already exists in Downloads folder."
 msgstr "Получаемый файл уже существует в папке Загрузок."
 
-#: src/WormholeInterface.vala:206 src/WormholeInterface.vala:211
-#: src/WormholeInterface.vala:221 src/WormholeInterface.vala:226
+#: src/WormholeInterface.vala:207 src/WormholeInterface.vala:212
+#: src/WormholeInterface.vala:222 src/WormholeInterface.vala:227
 #, fuzzy
 msgid "I/O Error"
 msgstr "Файловая Ошибка"
 
-#: src/WormholeInterface.vala:216
+#: src/WormholeInterface.vala:217
 msgid "Relay server unresponsive."
 msgstr "Сервер-ретранслятор не отвечает."
 
-#: src/WormholeInterface.vala:221
+#: src/WormholeInterface.vala:222
 #, fuzzy
 msgid ""
 "Some files are unreadable. Please make sure they don't contain special "
@@ -83,7 +83,7 @@ msgstr ""
 "Не удалось прочитать некоторые файлы. Убедитесь, что их имена и пути не "
 "содержат специальные знаки."
 
-#: src/WormholeInterface.vala:226
+#: src/WormholeInterface.vala:227
 msgid "Archive creation failed, perhaps your disk is running out of space."
 msgstr ""
 "Не получилось упаковать файлы. Возможно, у вас кончается свободное место на "
@@ -116,7 +116,7 @@ msgstr "Сохранена в вашей папке Загрузок"
 #: src/View/ReceiveView.vala:80
 #, fuzzy
 msgid "Connection closed unexpectedly."
-msgstr "Соединение неожиданно разорвано."
+msgstr "Соединение было неожиданно разорвано."
 
 #: src/View/ReceiveView.vala:83
 msgid "Transferring: "
@@ -199,23 +199,40 @@ msgstr "Разное"
 
 #: src/View/SettingsView.vala:16
 #, fuzzy
+msgid "Downloads:"
+msgstr "Загрузки:"
+
+#: src/View/SettingsView.vala:18
+#, fuzzy
 msgid "ID Length:"
 msgstr "Слов в ID:"
 
-#: src/View/SettingsView.vala:20
+#: src/View/SettingsView.vala:22
 #, fuzzy
 msgid "Sounds:"
 msgstr "Звуки:"
 
-#: src/View/DropView.vala:16
+#: src/View/SettingsView.vala:73
+msgid "Select a folder"
+msgstr "Выберите папку"
+
+#: src/View/SettingsView.vala:76
+msgid "_Cancel"
+msgstr "_Отмена"
+
+#: src/View/SettingsView.vala:78
+msgid "_Select"
+msgstr "_Выбрать"
+
+#: src/View/DropView.vala:9
 msgid "Drag files and folders here"
 msgstr "Перетащите сюда файлы и папки"
 
-#: src/View/DropView.vala:17
+#: src/View/DropView.vala:10
 msgid "Drop to send"
 msgstr "Отпустите для отправки"
 
-#: src/View/DropView.vala:98
+#: src/View/DropView.vala:90
 #, fuzzy
 msgid "Internal Error"
 msgstr "Ошибка"
