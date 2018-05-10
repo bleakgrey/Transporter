@@ -21,5 +21,10 @@
 			<summary>Words Count</summary>
 			<description>Sets how many words should Transfer ID contain.</description>
 		</key>
+		<key name="downloads" type="s">
+			<default>'null'</default>
+			<summary>Downloads Folder</summary>
+			<description>Path to a custom Downloads folder.</description>
+		</key>
 	</schema>
 </schemalist>

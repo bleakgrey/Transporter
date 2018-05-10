@@ -14,7 +14,6 @@ public class WormholeInterface : Object {
 
     public string home_path = null;
     public string wormhole_path = null;
-    public string downloads_path = null;
     public const string[] WORMHOLE_LOCATIONS = {"/bin/wormhole", "/usr/bin/wormhole", "/usr/sbin/wormhole", "~/.local/bin/wormhole"};
 
     public const string ERR_INVALID_ID = "reenter the key";
@@ -32,7 +31,6 @@ public class WormholeInterface : Object {
 
     construct {
         home_path = GLib.Environment.get_home_dir ();
-        downloads_path = GLib.Environment.get_user_special_dir (UserDirectory.DOWNLOAD);
         settings = TransporterSettings.get_default();
     }
 
@@ -104,6 +102,7 @@ public class WormholeInterface : Object {
         info ("Opening wormhole");
 
         try{
+            Process.spawn_command_line_sync ("mkdir " + settings.get_downloads_folder ());
             Process.spawn_async_with_pipes (
                 work_dir,
                 argv,
@@ -167,7 +166,7 @@ public class WormholeInterface : Object {
         args += "receive";
         args += "--accept-file";
         args += id;
-        open (args, downloads_path);
+        open (args, settings.get_downloads_folder ());
     }
 
     public void ding() {

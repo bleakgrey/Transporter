@@ -15,7 +15,9 @@ public class WelcomeView : AbstractView {
                     break;
                 case 2:
                     try{
-                        AppInfo.launch_default_for_uri ("file://" + wormhole.downloads_path, null);
+                        var path = TransporterSettings.get_default ().get_downloads_folder ();
+                        Process.spawn_command_line_sync ("mkdir " + path);
+                        AppInfo.launch_default_for_uri ("file://" + path, null);
                     }
                     catch(GLib.Error e){
                         warning(e.message);
