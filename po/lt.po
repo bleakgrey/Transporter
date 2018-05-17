@@ -1,0 +1,226 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.bleakgrey.transporter package.
+# Moo, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: com.github.bleakgrey.transporter\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-17 12:09+0300\n"
+"PO-Revision-Date: 2018-05-17 12:25+0300\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"Last-Translator: Moo\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"(n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: lt\n"
+
+#: src/TransporterWindow.vala:66
+msgid "Back"
+msgstr "Atgal"
+
+#: src/TransporterWindow.vala:75
+msgid "Settings"
+msgstr "Nustatymai"
+
+#: src/TransporterWindow.vala:118
+msgid "Are you sure you want to cancel transaction?"
+msgstr "Ar tikrai norite atsisakyti operacijos?"
+
+#: src/WormholeInterface.vala:8
+msgid "Error"
+msgstr "Klaida"
+
+#: src/WormholeInterface.vala:67 src/WormholeInterface.vala:74
+msgid "Installation Error"
+msgstr "Diegimo klaida"
+
+#: src/WormholeInterface.vala:74
+msgid "Couldn't install magic-wormhole automatically."
+msgstr "Nepavyko automatiškai įdiegti magic-wormhole."
+
+#: src/WormholeInterface.vala:197
+msgid "Please verify your ID and try again."
+msgstr "Patvirtinkite savo ID ir bandykite dar kartą."
+
+#: src/WormholeInterface.vala:197
+msgid "Invalid ID"
+msgstr "Neteisingas ID"
+
+#: src/WormholeInterface.vala:202
+msgid "Server is crowded at the moment. "
+msgstr "Šiuo metu serveris yra perpildytas. "
+
+#: src/WormholeInterface.vala:202 src/WormholeInterface.vala:217
+msgid "Server Error"
+msgstr "Serverio klaida"
+
+#: src/WormholeInterface.vala:207 src/WormholeInterface.vala:212
+msgid "Received file already exists in Downloads folder."
+msgstr "Atsiųstas failas jau yra Atsiuntimų aplanke."
+
+#: src/WormholeInterface.vala:207 src/WormholeInterface.vala:212
+#: src/WormholeInterface.vala:222 src/WormholeInterface.vala:227
+msgid "I/O Error"
+msgstr "I/O klaida"
+
+#: src/WormholeInterface.vala:217
+msgid "Relay server unresponsive."
+msgstr "Retransliavimo serveris neatsako."
+
+#: src/WormholeInterface.vala:222
+msgid ""
+"Some files are unreadable. Please make sure they don't contain special "
+"characters in their paths and names."
+msgstr ""
+"Kai kurie failai yra neperskaitomi. Įsitikinkite, kad jų pavadinimuose "
+"ir keliuose nėra specialių simbolių."
+
+#: src/WormholeInterface.vala:227
+msgid "Archive creation failed, perhaps your disk is running out of space."
+msgstr ""
+"Archyvo sukūrimas nepavyko, galbūt, jūsų diske liko mažai laisvos vietos."
+
+#: src/View/InstallView.vala:8
+msgid "Preparing Transporter"
+msgstr "Ruošiama Transporter"
+
+#: src/View/InstallView.vala:9
+msgid "Installing magic-wormhole"
+msgstr "Diegiama magic-wormhole"
+
+#: src/View/ReceiveView.vala:10
+msgid "Enter Transfer ID"
+msgstr "Įveskite persiuntimo ID"
+
+#: src/View/ReceiveView.vala:15
+msgid "Ask the sender to share it"
+msgstr "Paprašykite siuntėjo juo pasidalinti"
+
+#: src/View/ReceiveView.vala:73 src/View/SendView.vala:34
+msgid "Transfer Complete"
+msgstr "Persiuntimas užbaigtas"
+
+#: src/View/ReceiveView.vala:74
+msgid "Saved in your Downloads folder"
+msgstr "Įrašyta į jūsų Atsiuntimų aplanką"
+
+#: src/View/ReceiveView.vala:80
+msgid "Connection closed unexpectedly."
+msgstr "Ryšys netikėtai nutrūko."
+
+#: src/View/ReceiveView.vala:83
+msgid "Transferring: "
+msgstr "Persiunčiama: "
+
+#: src/View/ReceiveView.vala:84
+msgid "Please wait a moment"
+msgstr "Truputį palaukite"
+
+#: src/View/SendView.vala:11
+msgid "Starting Transfer..."
+msgstr "Pradedamas persiuntimas..."
+
+#: src/View/SendView.vala:16
+msgid "Generating ID..."
+msgstr "Generuojamas ID..."
+
+#: src/View/SendView.vala:24
+msgid "Your Transfer ID"
+msgstr "Jūsų persiuntimo ID"
+
+#: src/View/SendView.vala:25
+msgid "Share it with the recipient"
+msgstr "Pasidalinkite juo su gavėju"
+
+#: src/View/SendView.vala:35
+msgid "Connection has been closed"
+msgstr "Ryšys nutrauktas"
+
+#: src/View/WelcomeView.vala:4
+msgid "Welcome to Transporter"
+msgstr "Sveiki atvykę į Transporter"
+
+#: src/View/WelcomeView.vala:4
+msgid "What would you like to do?"
+msgstr "Ką norėtumėte atlikti?"
+
+#: src/View/WelcomeView.vala:5
+msgid "Send Files"
+msgstr "Siųsti failus"
+
+#: src/View/WelcomeView.vala:5
+msgid "Upload data to another computer"
+msgstr "Įkelkite duomenis į kitą kompiuterį"
+
+#: src/View/WelcomeView.vala:6
+msgid "Receive Files"
+msgstr "Gauti failus"
+
+#: src/View/WelcomeView.vala:6
+msgid "Download data from another computer"
+msgstr "Atsisiųsti duomenis iš kito kompiuterio"
+
+#: src/View/WelcomeView.vala:7
+msgid "Show Downloads"
+msgstr "Rodyti atsiuntimus"
+
+#: src/View/WelcomeView.vala:7
+msgid "Open your Downloads folder"
+msgstr "Atverkite savo Atsiuntimų aplanką"
+
+#: src/View/SettingsView.vala:9
+msgid "Servers"
+msgstr "Serveriai"
+
+#: src/View/SettingsView.vala:10
+msgid "Relay:"
+msgstr "Retransliavimas:"
+
+#: src/View/SettingsView.vala:12
+msgid "Transit:"
+msgstr "Tranzitas:"
+
+#: src/View/SettingsView.vala:15
+msgid "Miscellaneous"
+msgstr "Įvairūs"
+
+#: src/View/SettingsView.vala:16
+msgid "Downloads:"
+msgstr "Atsiuntimai:"
+
+#: src/View/SettingsView.vala:18
+msgid "ID Length:"
+msgstr "ID ilgis:"
+
+#: src/View/SettingsView.vala:22
+msgid "Sounds:"
+msgstr "Garsai:"
+
+#: src/View/SettingsView.vala:73
+msgid "Select a folder"
+msgstr "Pasirinkti aplanką"
+
+#: src/View/SettingsView.vala:76
+msgid "_Cancel"
+msgstr "_Atsisakyti"
+
+#: src/View/SettingsView.vala:78
+msgid "_Select"
+msgstr "_Pasirinkti"
+
+#: src/View/DropView.vala:9
+msgid "Drag files and folders here"
+msgstr "Vilkite failus ir aplankus čia"
+
+#: src/View/DropView.vala:10
+msgid "Drop to send"
+msgstr "Vilkite, norėdami siųsti"
+
+#: src/View/DropView.vala:90
+msgid "Internal Error"
+msgstr "Vidinė klaida"
