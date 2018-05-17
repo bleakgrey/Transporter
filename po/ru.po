@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.bleakgrey.transporter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-10 16:05+0300\n"
+"POT-Creation-Date: 2018-05-17 14:49+0300\n"
 "PO-Revision-Date: 2018-02-28 15:36+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -110,7 +110,6 @@ msgid "Saved in your Downloads folder"
 msgstr "Сохранена в вашей папке Загрузок"
 
 #: src/View/ReceiveView.vala:80
-#, fuzzy
 msgid "Connection closed unexpectedly."
 msgstr "Соединение было неожиданно разорвано."
 
@@ -206,11 +205,11 @@ msgstr "Звуки:"
 msgid "Select a folder"
 msgstr "Выберите папку"
 
-#: src/View/SettingsView.vala:76
+#: src/View/SettingsView.vala:76 src/View/DropView.vala:63
 msgid "_Cancel"
 msgstr "_Отмена"
 
-#: src/View/SettingsView.vala:78
+#: src/View/SettingsView.vala:78 src/View/DropView.vala:65
 msgid "_Select"
 msgstr "_Выбрать"
 
@@ -222,6 +221,14 @@ msgstr "Перетащите сюда файлы и папки"
 msgid "Drop to send"
 msgstr "Отпустите для отправки"
 
-#: src/View/DropView.vala:90
+#: src/View/DropView.vala:11
+msgid "Or click to select a file"
+msgstr "Или нажмите, чтобы выбрать файл"
+
+#: src/View/DropView.vala:60
+msgid "Select a file"
+msgstr "Выберите файл"
+
+#: src/View/DropView.vala:132
 msgid "Internal Error"
 msgstr "Ошибка"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.bleakgrey.transporter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-10 16:05+0300\n"
+"POT-Creation-Date: 2018-05-17 14:49+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -200,11 +200,11 @@ msgstr ""
 msgid "Select a folder"
 msgstr ""
 
-#: src/View/SettingsView.vala:76
+#: src/View/SettingsView.vala:76 src/View/DropView.vala:63
 msgid "_Cancel"
 msgstr ""
 
-#: src/View/SettingsView.vala:78
+#: src/View/SettingsView.vala:78 src/View/DropView.vala:65
 msgid "_Select"
 msgstr ""
 
@@ -216,6 +216,14 @@ msgstr ""
 msgid "Drop to send"
 msgstr ""
 
-#: src/View/DropView.vala:90
+#: src/View/DropView.vala:11
+msgid "Or click to select a file"
+msgstr ""
+
+#: src/View/DropView.vala:60
+msgid "Select a file"
+msgstr ""
+
+#: src/View/DropView.vala:132
 msgid "Internal Error"
 msgstr ""
