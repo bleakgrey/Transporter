@@ -2,12 +2,15 @@
 Type=Application
 Name=Transporter
 Comment=Share files between computers
+Comment[lt]=Dalinkitės failais tarp kompiuterių
 GenericName=File Sharing
+GenericName[lt]=Dalinimasis failais
 Exec=com.github.bleakgrey.transporter
 Icon=com.github.bleakgrey.transporter
 Terminal=false
 Categories=GNOME;GTK;Utility;Network;FileTransfer;
 Keywords=share;files;send;receive;wormhole;transfer;
+Keywords[lt]=bendrinti;dalintis;failai;siųsti;gauti;wormhole;persiųsti;
 MimeType=text/plain;
 StartupNotify=true
 Actions=ShowSend;ShowReceive;
@@ -15,7 +18,9 @@ Actions=ShowSend;ShowReceive;
 [Desktop Action ShowSend]
 Exec=com.github.bleakgrey.transporter --send
 Name=Send Files
+Name[lt]=Siųsti failus
 
 [Desktop Action ShowReceive]
 Exec=com.github.bleakgrey.transporter --receive
 Name=Receive Files
+Name[lt]=Gauti failus
