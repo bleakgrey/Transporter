@@ -1,78 +1,88 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the com.github.bleakgrey.transporter package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: com.github.bleakgrey.transporter\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-18 12:30+0200\n"
-"PO-Revision-Date: 2018-05-18 13:00+0200\n"
+"POT-Creation-Date: 2018-05-18 15:48+0200\n"
+"PO-Revision-Date: 2018-05-18 15:49+0200\n"
+"Last-Translator: Papou84 <pacome.heuze@gmail.com>\n"
 "Language-Team: \n"
+"Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.8.7.1\n"
+"X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Last-Translator: Papou84 <pacome.heuze@gmail.com>\n"
-"Language: it_IT\n"
 
 #: src/TransporterWindow.vala:66
+#, fuzzy
 msgid "Back"
 msgstr "Indietro"
 
 #: src/TransporterWindow.vala:75
+#, fuzzy
 msgid "Settings"
 msgstr "Parametri"
 
 #: src/TransporterWindow.vala:118
+#, fuzzy
 msgid "Are you sure you want to cancel transaction?"
 msgstr "Sei sicuro di voler cancelare la transazione?"
 
 #: src/WormholeInterface.vala:8
+#, fuzzy
 msgid "Error"
 msgstr "Errore"
 
 #: src/WormholeInterface.vala:67 src/WormholeInterface.vala:74
+#, fuzzy
 msgid "Installation Error"
 msgstr "Errore di installazione"
 
 #: src/WormholeInterface.vala:74
+#, fuzzy
 msgid "Couldn't install magic-wormhole automatically."
 msgstr ""
 "Non è stato possibile di installare magic-wormhole automaticamente."
 
 #: src/WormholeInterface.vala:197
+#, fuzzy
 msgid "Please verify your ID and try again."
 msgstr "Per favore verificate il vostro ID e provate ancora."
 
 #: src/WormholeInterface.vala:197
+#, fuzzy
 msgid "Invalid ID"
 msgstr "ID non valido"
 
 #: src/WormholeInterface.vala:202
+#, fuzzy
 msgid "Server is crowded at the moment. "
 msgstr "Il sever è occupato per il momento."
 
 #: src/WormholeInterface.vala:202 src/WormholeInterface.vala:217
+#, fuzzy
 msgid "Server Error"
 msgstr "Errore sever"
 
 #: src/WormholeInterface.vala:207 src/WormholeInterface.vala:212
+#, fuzzy
 msgid "Received file already exists in Downloads folder."
 msgstr "Gli file ricevuti esistono gia nella cartella di download."
 
 #: src/WormholeInterface.vala:207 src/WormholeInterface.vala:212
 #: src/WormholeInterface.vala:222 src/WormholeInterface.vala:227
+#, fuzzy
 msgid "I/O Error"
 msgstr "I/O Errore"
 
 #: src/WormholeInterface.vala:217
+#, fuzzy
 msgid "Relay server unresponsive."
 msgstr "Il server Relay non risponde."
 
 #: src/WormholeInterface.vala:222
+#, fuzzy
 msgid ""
 "Some files are unreadable. Please make sure they don't contain special "
 "characters in their paths and names."
@@ -81,147 +91,183 @@ msgstr ""
 "contengono carratteri speciali nel nome or nel path."
 
 #: src/WormholeInterface.vala:227
+#, fuzzy
 msgid "Archive creation failed, perhaps your disk is running out of space."
 msgstr ""
 "La creazione dell archivio non è stato possibile, po essere che il disco "
 "è pieno."
 
 #: src/View/InstallView.vala:8
+#, fuzzy
 msgid "Preparing Transporter"
 msgstr "Preparazione di Transporter"
 
 #: src/View/InstallView.vala:9
+#, fuzzy
 msgid "Installing magic-wormhole"
 msgstr "Installazione di magic-wormhole"
 
 #: src/View/ReceiveView.vala:10
+#, fuzzy
 msgid "Enter Transfer ID"
 msgstr "Inserire un ID di Transferimento"
 
 #: src/View/ReceiveView.vala:15
+#, fuzzy
 msgid "Ask the sender to share it"
 msgstr "Chiedere al l'inviatore di condividerlo"
 
 #: src/View/ReceiveView.vala:73 src/View/SendView.vala:34
+#, fuzzy
 msgid "Transfer Complete"
 msgstr "Trasferimento completo"
 
 #: src/View/ReceiveView.vala:74
+#, fuzzy
 msgid "Saved in your Downloads folder"
 msgstr "Salvare nella cartella di Download"
 
 #: src/View/ReceiveView.vala:80
+#, fuzzy
 msgid "Connection closed unexpectedly."
 msgstr "La connessione s'è chiusa inaspettatamente."
 
 #: src/View/ReceiveView.vala:83
+#, fuzzy
 msgid "Transferring: "
 msgstr "Trasferimento:"
 
 #: src/View/ReceiveView.vala:84
+#, fuzzy
 msgid "Please wait a moment"
 msgstr "Per favore aspettare un momento"
 
 #: src/View/SendView.vala:11
+#, fuzzy
 msgid "Starting Transfer..."
 msgstr "Comminciare il Trasferimento"
 
 #: src/View/SendView.vala:16
+#, fuzzy
 msgid "Generating ID..."
 msgstr "Generando un ID"
 
 #: src/View/SendView.vala:24
+#, fuzzy
 msgid "Your Transfer ID"
 msgstr "Il vostro ID di Trasferimento"
 
 #: src/View/SendView.vala:25
+#, fuzzy
 msgid "Share it with the recipient"
 msgstr "Condividere con il ricevutore"
 
 #: src/View/SendView.vala:35
+#, fuzzy
 msgid "Connection has been closed"
 msgstr "La connessione è stata chiusa"
 
 #: src/View/WelcomeView.vala:4
+#, fuzzy
 msgid "Welcome to Transporter"
 msgstr "Benvenuto in Transporter"
 
 #: src/View/WelcomeView.vala:4
+#, fuzzy
 msgid "What would you like to do?"
 msgstr "Cosa volete fare?"
 
 #: src/View/WelcomeView.vala:5
+#, fuzzy
 msgid "Send Files"
 msgstr "Inviare Files"
 
 #: src/View/WelcomeView.vala:5
+#, fuzzy
 msgid "Upload data to another computer"
 msgstr "Trasferire data verso un altro computer"
 
 #: src/View/WelcomeView.vala:6
+#, fuzzy
 msgid "Receive Files"
 msgstr "Ricivere Files"
 
 #: src/View/WelcomeView.vala:6
+#, fuzzy
 msgid "Download data from another computer"
 msgstr "Scaricare data da un altro computer"
 
 #: src/View/WelcomeView.vala:7
+#, fuzzy
 msgid "Show Downloads"
 msgstr "Mostrare la cartella Download"
 
 #: src/View/WelcomeView.vala:7
+#, fuzzy
 msgid "Open your Downloads folder"
 msgstr "Aprire la cartella Download"
 
 #: src/View/SettingsView.vala:9
+#, fuzzy
 msgid "Servers"
 msgstr "Server"
 
 #: src/View/SettingsView.vala:10
+#, fuzzy
 msgid "Relay:"
 msgstr "Relay:"
 
 #: src/View/SettingsView.vala:12
+#, fuzzy
 msgid "Transit:"
 msgstr "Transito:"
 
 #: src/View/SettingsView.vala:15
+#, fuzzy
 msgid "Miscellaneous"
 msgstr "cose varie"
 
 #: src/View/SettingsView.vala:16
+#, fuzzy
 msgid "Downloads:"
 msgstr "Download:"
 
 #: src/View/SettingsView.vala:18
+#, fuzzy
 msgid "ID Length:"
 msgstr "Lungezza ID:"
 
 #: src/View/SettingsView.vala:22
+#, fuzzy
 msgid "Sounds:"
 msgstr "Suoni:"
 
 #: src/View/SettingsView.vala:73
+#, fuzzy
 msgid "Select a folder"
 msgstr "Seleziona una Cartella"
 
 #: src/View/SettingsView.vala:76
+#, fuzzy
 msgid "_Cancel"
 msgstr "_Cancelare"
 
 #: src/View/SettingsView.vala:78
+#, fuzzy
 msgid "_Select"
 msgstr "_Selezionare"
 
 #: src/View/DropView.vala:9
+#, fuzzy
 msgid "Drag files and folders here"
 msgstr "Trascinare Files e Cartelle qui"
 
 #: src/View/DropView.vala:10
+#, fuzzy
 msgid "Drop to send"
 msgstr "Lasciare qui per mandare"
 
 #: src/View/DropView.vala:90
+#, fuzzy
 msgid "Internal Error"
 msgstr "Errore interna"
