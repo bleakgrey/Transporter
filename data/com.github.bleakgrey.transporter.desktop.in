@@ -22,20 +22,13 @@ Keywords[fr_FR]=partage;fichiers;envoyer;recevoir;wormhole;transfert;
 Keywords[it_IT]=condivisione;file;mandare;ricevere;wormhole;trasferimento;
 MimeType=text/plain;
 StartupNotify=true
+X-GNOME-Gettext-Domain=com.github.bleakgrey.transporter
 Actions=ShowSend;ShowReceive;
 
 [Desktop Action ShowSend]
 Exec=com.github.bleakgrey.transporter --send
 Name=Send Files
-Name[ru]=Отправить Файлы
-Name[lt]=Siųsti failus
-Name[fr_FR]=Envoie de Fichiers
-Name[it_IT]=Mandare dei file
 
 [Desktop Action ShowReceive]
 Exec=com.github.bleakgrey.transporter --receive
 Name=Receive Files
-Name[ru]=Получить Файлы
-Name[lt]=Gauti failus
-Name[fr_FR]=Reception de Fichiers
-Name[it_IT]=ricevere dei file
