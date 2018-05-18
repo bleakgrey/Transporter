@@ -18,7 +18,7 @@ public class Transporter : Granite.Application {
             application_id = "com.github.bleakgrey.transporter";
             flags = ApplicationFlags.HANDLES_OPEN;
             program_name = "Transporter";
-            build_version = "1.3.1";
+            build_version = "1.3.2";
     }
 
     public static int main (string[] args) {
