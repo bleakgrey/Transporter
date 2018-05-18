@@ -23,7 +23,7 @@
   <developer_name>bleak_grey</developer_name>
   <url type="homepage">https://github.com/bleakgrey</url>
   <url type="bugtracker">https://github.com/bleakgrey/transporter/issues</url>
-  <url type="donation">https://www.paypal.me/bleakgrey</url>
+  <url type="donation">https://liberapay.com/bleakgrey</url>
   <screenshots>
     <screenshot type="default">
       <image>https://raw.githubusercontent.com/bleakgrey/transporter/master/data/screenshot.png</image>
@@ -37,6 +37,15 @@
   </screenshots>
 
   <releases>
+      <release version="1.3.1" date="2018-05-18">
+  ​      <description>
+  ​         <ul>
+              <li>Added custom Download folder support</li>
+              <li>Added single file selection support instead of drag and dropping</li>
+              <li>Translated into Russian, Lithuanian, French and Italian languages!</li>
+          </ul>
+  ​      </description>
+  ​    </release>
       <release version="1.3.0" date="2018-04-08">
   ​      <description>
   ​         <ul>
