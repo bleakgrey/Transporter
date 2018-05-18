@@ -223,11 +223,11 @@ msgstr "Déposez pour envoyer"
 
 #: src/View/DropView.vala:11
 msgid "Or click to select a file"
-msgstr ""
+msgstr "Ou cliquez pour choisir un fichier"
 
 #: src/View/DropView.vala:60
 msgid "Select a file"
-msgstr "Choisir un dossier"
+msgstr "Choisir un fichier"
 
 #: src/View/DropView.vala:132
 msgid "Internal Error"
