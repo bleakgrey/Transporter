@@ -43,3 +43,4 @@ If you feel like contributing, you're always welcome to help the project in many
 
 ## Credits
 * Lithuanian translation by <a href="https://github.com/welaq">@welaq</a>
+* French and Italian translation by <a href="https://github.com/papou84">@papou84</a>
