@@ -40,3 +40,6 @@ If you feel like contributing, you're always welcome to help the project in many
 * Donating with [LiberaPay](https://liberapay.com/bleakgrey/) to help project development and keeping the developer happy
 
 <a href="https://liberapay.com/bleakgrey/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
+
+## Credits
+* Lithuanian translation by <a href="https://github.com/welaq">@welaq</a>
