@@ -111,7 +111,7 @@ msgstr "La connessione s'è chiusa inaspettatamente."
 
 #: src/View/ReceiveView.vala:83
 msgid "Transferring: "
-msgstr "Trasferimento:"
+msgstr "Trasferimento: "
 
 #: src/View/ReceiveView.vala:84
 msgid "Please wait a moment"
@@ -119,11 +119,11 @@ msgstr "Per favore aspettare un momento"
 
 #: src/View/SendView.vala:11
 msgid "Starting Transfer..."
-msgstr "Comminciare il Trasferimento"
+msgstr "Comminciare il Trasferimento..."
 
 #: src/View/SendView.vala:16
 msgid "Generating ID..."
-msgstr "Generando un ID"
+msgstr "Generando un ID..."
 
 #: src/View/SendView.vala:24
 msgid "Your Transfer ID"
@@ -183,7 +183,7 @@ msgstr "Transito:"
 
 #: src/View/SettingsView.vala:15
 msgid "Miscellaneous"
-msgstr "cose varie"
+msgstr "Cose varie"
 
 #: src/View/SettingsView.vala:16
 msgid "Downloads:"
@@ -199,7 +199,7 @@ msgstr "Suoni:"
 
 #: src/View/SettingsView.vala:73
 msgid "Select a folder"
-msgstr "Seleziona una Cartella"
+msgstr "Seleziona una cartella"
 
 #: src/View/SettingsView.vala:76 src/View/DropView.vala:63
 msgid "_Cancel"
@@ -219,11 +219,11 @@ msgstr "Lasciare qui per mandare"
 
 #: src/View/DropView.vala:11
 msgid "Or click to select a file"
-msgstr ""
+msgstr "Oppure fare clic per selezionare un file"
 
 #: src/View/DropView.vala:60
 msgid "Select a file"
-msgstr "Seleziona una Cartella"
+msgstr "Seleziona un file"
 
 #: src/View/DropView.vala:132
 msgid "Internal Error"
