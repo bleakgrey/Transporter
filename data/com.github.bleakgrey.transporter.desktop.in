@@ -2,15 +2,24 @@
 Type=Application
 Name=Transporter
 Comment=Share files between computers
+Comment[ru]=Передача файлов на другой компьютер
 Comment[lt]=Dalinkitės failais tarp kompiuterių
+Comment[fr_FR]=Partager des fichiers avec d'autres ordinateurs
+Comment[it_IT]=Condividere files con altri computer
 GenericName=File Sharing
+GenericName[ru]=Передача Файлов
 GenericName[lt]=Dalinimasis failais
+GenericName[fr_FR]=Partage de fichiers
+GenericName[it_IT]=Condivisione di File
 Exec=com.github.bleakgrey.transporter
 Icon=com.github.bleakgrey.transporter
 Terminal=false
 Categories=GNOME;GTK;Utility;Network;FileTransfer;
 Keywords=share;files;send;receive;wormhole;transfer;
+Keywords[ru]=передать;передача;отправить;отправка;принять;wormhole;
 Keywords[lt]=bendrinti;dalintis;failai;siųsti;gauti;wormhole;persiųsti;
+Keywords[fr_FR]=partage;fichiers;envoyer;recevoir;wormhole;transfert;
+keywords[it_IT]=condivisione;file;mandare;ricevere;wormhole;trasferimento;
 MimeType=text/plain;
 StartupNotify=true
 Actions=ShowSend;ShowReceive;
@@ -18,9 +27,15 @@ Actions=ShowSend;ShowReceive;
 [Desktop Action ShowSend]
 Exec=com.github.bleakgrey.transporter --send
 Name=Send Files
+Name[ru]=Отправить Файлы
 Name[lt]=Siųsti failus
+Name[fr_FR]=Envoie de Fichiers
+Name[it_IT]=Mandare dei file
 
 [Desktop Action ShowReceive]
 Exec=com.github.bleakgrey.transporter --receive
 Name=Receive Files
+Name[ru]=Получить Файлы
 Name[lt]=Gauti failus
+Name[fr_FR]=Reception de Fichiers
+Name[it_IT]=ricevere dei file
