@@ -95,11 +95,11 @@ msgstr "Installation de magic-wormhole"
 
 #: src/View/ReceiveView.vala:10
 msgid "Enter Transfer ID"
-msgstr "Renseigner l'ID de transfert."
+msgstr "Renseigner l'ID de transfert"
 
 #: src/View/ReceiveView.vala:15
 msgid "Ask the sender to share it"
-msgstr "Demander à l'envoyeur de le partager."
+msgstr "Demander à l'envoyeur de le partager"
 
 #: src/View/ReceiveView.vala:73 src/View/SendView.vala:34
 msgid "Transfer Complete"
@@ -123,11 +123,11 @@ msgstr "Attendez un instant SVP "
 
 #: src/View/SendView.vala:11
 msgid "Starting Transfer..."
-msgstr "Démarrage du transfert"
+msgstr "Démarrage du transfert..."
 
 #: src/View/SendView.vala:16
 msgid "Generating ID..."
-msgstr "ID en cours de création"
+msgstr "ID en cours de création..."
 
 #: src/View/SendView.vala:24
 msgid "Your Transfer ID"
@@ -135,11 +135,11 @@ msgstr "Votre ID de transfert"
 
 #: src/View/SendView.vala:25
 msgid "Share it with the recipient"
-msgstr "Partagez votre ID avec le recepteur."
+msgstr "Partagez votre ID avec le recepteur"
 
 #: src/View/SendView.vala:35
 msgid "Connection has been closed"
-msgstr "La connexion a été fermé."
+msgstr "La connexion a été fermé"
 
 #: src/View/WelcomeView.vala:4
 msgid "Welcome to Transporter"
@@ -151,11 +151,11 @@ msgstr "Que souhaitez-vous faire?"
 
 #: src/View/WelcomeView.vala:5
 msgid "Send Files"
-msgstr "Envoyer des fichiers."
+msgstr "Envoyer des fichiers"
 
 #: src/View/WelcomeView.vala:5
 msgid "Upload data to another computer"
-msgstr "Uploader des données sur un autre ordinateur."
+msgstr "Uploader des données sur un autre ordinateur"
 
 #: src/View/WelcomeView.vala:6
 msgid "Receive Files"
@@ -179,7 +179,7 @@ msgstr "Serveurs"
 
 #: src/View/SettingsView.vala:10
 msgid "Relay:"
-msgstr "Relais"
+msgstr "Relais:"
 
 #: src/View/SettingsView.vala:12
 msgid "Transit:"
@@ -191,7 +191,7 @@ msgstr "Divers"
 
 #: src/View/SettingsView.vala:16
 msgid "Downloads:"
-msgstr "Téléchargements"
+msgstr "Téléchargements:"
 
 #: src/View/SettingsView.vala:18
 msgid "ID Length:"
