@@ -1,0 +1,230 @@
+# Tradução para o idioma Português da aplicação com.github.bleakgrey.transporter package.
+# Direitos Autorais (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# Este arquivo é distribuido sob mesma licensa do pacote com.github.bleakgrey.transporter.
+# Primeiro Autor <helder.bertoldo@gmail.com>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: com.github.bleakgrey.transporter\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-20 18:53+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Helder Bertoldo <helder.bertoldo@gmail.com>\n"
+"Language-Team: \n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/TransporterWindow.vala:66
+msgid "Back"
+msgstr "Voltar"
+
+#: src/TransporterWindow.vala:75
+msgid "Settings"
+msgstr "Configurações"
+
+#: src/TransporterWindow.vala:118
+msgid "Are you sure you want to cancel transaction?"
+msgstr "Tem certeza de que deseja cancelar a transação?"
+
+#: src/WormholeInterface.vala:8
+msgid "Error"
+msgstr "Erro"
+
+#: src/WormholeInterface.vala:67 src/WormholeInterface.vala:74
+msgid "Installation Error"
+msgstr "Erro na Instalação"
+
+#: src/WormholeInterface.vala:74
+msgid "Couldn't install magic-wormhole automatically."
+msgstr "Não foi possível instalar o magic-wormhole automaticamente."
+
+#: src/WormholeInterface.vala:197
+msgid "Please verify your ID and try again."
+msgstr "Por favor, verifique o seu ID e tente novamente."
+
+#: src/WormholeInterface.vala:197
+msgid "Invalid ID"
+msgstr "ID inválido"
+
+#: src/WormholeInterface.vala:202
+msgid "Server is crowded at the moment. "
+msgstr "O servidor está lotado no momento."
+
+#: src/WormholeInterface.vala:202 src/WormholeInterface.vala:217
+msgid "Server Error"
+msgstr "Erro no servidor"
+
+#: src/WormholeInterface.vala:207 src/WormholeInterface.vala:212
+msgid "Received file already exists in Downloads folder."
+msgstr "Recebido um arquivo que já existe na pasta de Downloads"
+
+#: src/WormholeInterface.vala:207 src/WormholeInterface.vala:212
+#: src/WormholeInterface.vala:222 src/WormholeInterface.vala:227
+msgid "I/O Error"
+msgstr "Erro de Entrada/Saída"
+
+#: src/WormholeInterface.vala:217
+msgid "Relay server unresponsive."
+msgstr "Servidor de retransmissão sem resposta."
+
+#: src/WormholeInterface.vala:222
+msgid ""
+"Some files are unreadable. Please make sure they don't contain special "
+"characters in their paths and names."
+msgstr "Alguns arquivos estão ilegíveis. Por favor, certifique-se de que eles não contém "
+"caractéres especiais em seus caminhos e nomes."
+
+#: src/WormholeInterface.vala:227
+msgid "Archive creation failed, perhaps your disk is running out of space."
+msgstr "A criação do arquivo falhou, talvez o seu disco esteja sem espaço disponível."
+
+#: src/View/InstallView.vala:8
+msgid "Preparing Transporter"
+msgstr "Preparando o transporte"
+
+#: src/View/InstallView.vala:9
+msgid "Installing magic-wormhole"
+msgstr "Instalando magic-wormhole"
+
+#: src/View/ReceiveView.vala:10
+msgid "Enter Transfer ID"
+msgstr "Digite o ID de transferência"
+
+#: src/View/ReceiveView.vala:15
+msgid "Ask the sender to share it"
+msgstr "Peça ao remetente para compartilhá-lo"
+
+#: src/View/ReceiveView.vala:73 src/View/SendView.vala:34
+msgid "Transfer Complete"
+msgstr "Transferência Completa"
+
+#: src/View/ReceiveView.vala:74
+msgid "Saved in your Downloads folder"
+msgstr "Salvo em sua pasta de Downloads"
+
+#: src/View/ReceiveView.vala:80
+msgid "Connection closed unexpectedly."
+msgstr "Conexão fechada inesperadamente."
+
+#: src/View/ReceiveView.vala:83
+msgid "Transferring: "
+msgstr "Transferindo: "
+
+#: src/View/ReceiveView.vala:84
+msgid "Please wait a moment"
+msgstr "Por favor aguarde um momento"
+
+#: src/View/SendView.vala:11
+msgid "Starting Transfer..."
+msgstr "Iniciando a transferência..."
+
+#: src/View/SendView.vala:16
+msgid "Generating ID..."
+msgstr "Gerando o ID..."
+
+#: src/View/SendView.vala:24
+msgid "Your Transfer ID"
+msgstr "Seu ID de transferência"
+
+#: src/View/SendView.vala:25
+msgid "Share it with the recipient"
+msgstr "Compartilhe isto com o destinatário"
+
+#: src/View/SendView.vala:35
+msgid "Connection has been closed"
+msgstr "A conexão foi fechada"
+
+#: src/View/WelcomeView.vala:4
+msgid "Welcome to Transporter"
+msgstr "Bem-vindo ao Transportador"
+
+#: src/View/WelcomeView.vala:4
+msgid "What would you like to do?"
+msgstr "O que você gostaria de fazer?"
+
+#: src/View/WelcomeView.vala:5
+msgid "Send Files"
+msgstr "Enviar Arquivos"
+
+#: src/View/WelcomeView.vala:5
+msgid "Upload data to another computer"
+msgstr "Enviar dados para outro computador"
+
+#: src/View/WelcomeView.vala:6
+msgid "Receive Files"
+msgstr "Receber Arquivos"
+
+#: src/View/WelcomeView.vala:6
+msgid "Download data from another computer"
+msgstr "Baixar dados de outro computador"
+
+#: src/View/WelcomeView.vala:7
+msgid "Show Downloads"
+msgstr "Exibir Downloads"
+
+#: src/View/WelcomeView.vala:7
+msgid "Open your Downloads folder"
+msgstr "Abrir sua pasta de Downloads"
+
+#: src/View/SettingsView.vala:9
+msgid "Servers"
+msgstr "Servidores"
+
+#: src/View/SettingsView.vala:10
+msgid "Relay:"
+msgstr "Retransmissão:"
+
+#: src/View/SettingsView.vala:12
+msgid "Transit:"
+msgstr "Transito:"
+
+#: src/View/SettingsView.vala:15
+msgid "Miscellaneous"
+msgstr "Diversos"
+
+#: src/View/SettingsView.vala:16
+msgid "Downloads:"
+msgstr "Baixados:"
+
+#: src/View/SettingsView.vala:18
+msgid "ID Length:"
+msgstr "Comprimento do ID:"
+
+#: src/View/SettingsView.vala:22
+msgid "Sounds:"
+msgstr "Sons:"
+
+#: src/View/SettingsView.vala:73
+msgid "Select a folder"
+msgstr "Selecione uma pasta"
+
+#: src/View/SettingsView.vala:76 src/View/DropView.vala:63
+msgid "_Cancel"
+msgstr "_Cancelar"
+
+#: src/View/SettingsView.vala:78 src/View/DropView.vala:65
+msgid "_Select"
+msgstr "_Selecionar"
+
+#: src/View/DropView.vala:9
+msgid "Drag files and folders here"
+msgstr "Arraste arquivos e pastas aqui"
+
+#: src/View/DropView.vala:10
+msgid "Drop to send"
+msgstr "Solte para enviar"
+
+#: src/View/DropView.vala:11
+msgid "Or click to select a file"
+msgstr "Ou clique para selecionar um arquivo"
+
+#: src/View/DropView.vala:60
+msgid "Select a file"
+msgstr "Selecione um arquivo"
+
+#: src/View/DropView.vala:132
+msgid "Internal Error"
+msgstr "Erro Interno"
