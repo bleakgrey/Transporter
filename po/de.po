@@ -60,7 +60,7 @@ msgstr "Serverfehler"
 
 #: src/WormholeInterface.vala:207 src/WormholeInterface.vala:212
 msgid "Received file already exists in Downloads folder."
-msgstr "Erhaltene Datei existiert bereits im Downloads Ordner"
+msgstr "Erhaltene Datei existiert bereits im Downloads Ordner."
 
 #: src/WormholeInterface.vala:207 src/WormholeInterface.vala:212
 #: src/WormholeInterface.vala:222 src/WormholeInterface.vala:227
@@ -207,11 +207,11 @@ msgstr "Wähle einen Ordner aus"
 
 #: src/View/SettingsView.vala:76 src/View/DropView.vala:63
 msgid "_Cancel"
-msgstr "_Abbrechen"
+msgstr "A_bbrechen"
 
 #: src/View/SettingsView.vala:78 src/View/DropView.vala:65
 msgid "_Select"
-msgstr "_Auswählen"
+msgstr "_Senden"
 
 #: src/View/DropView.vala:9
 msgid "Drag files and folders here"
